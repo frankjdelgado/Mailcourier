@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
 			t.string :email, null:false
 			t.string :password, null:false
 			t.integer :role, default: 0
+			t.references :agency, index: true
 			t.timestamps
 		end
 	end

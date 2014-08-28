@@ -52,8 +52,11 @@ ActiveRecord::Schema.define(version: 20140828020929) do
     t.string   "email",                  null: false
     t.string   "password",               null: false
     t.integer  "role",       default: 0
+    t.integer  "agency_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["agency_id"], name: "index_users_on_agency_id", using: :btree
 
 end
