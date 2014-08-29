@@ -1,6 +1,106 @@
-<div class="row">
-	<div class="col-md-12">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt nostrum eius iste dolore, omnis ducimus ut, expedita minima repellat voluptatibus quas dolorum recusandae delectus id possimus quos veritatis, illum! A?</p>
-		<button class="btn btn-warning">adsa</button>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<nav class="navbar" role="navigation">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#"><strong>Mail</strong>courier</a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="menu">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li><button type="button" class="btn btn-black navbar-btn">LOGIN</button></li>
+			        <li><button type="button" class="btn btn-black navbar-btn">SIGN UP</button></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+</div>
+<div class="green-background">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<section class="presentation">
+					<h1>some title, <strong>subtitle</strong></h1>
+					<div class="row">
+						<div class="col-xs-offset-2 col-xs-8">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quidem quam maiores cupiditate qui amet minus tempora voluptatum perspiciatis quae, tenetur, incidunt nisi dolorum autem exercitationem odit, sit quod magnam!</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-4 col-md-offset-1">
+			<section class="info">
+				<div class="text-center">
+					<%= image_tag "calculator.png" %>
+					<h2>Calculator</h2>
+				</div>
+				<form role="form">
+				  <div class="form-group">
+				    <div class="input-group">
+				      <div class="input-group-addon">Height</div>
+				      <input class="form-control" type="text" placeholder="Enter Height">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="input-group">
+				      <div class="input-group-addon">Weight</div>
+				      <input class="form-control" type="text" placeholder="Enter Weight">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="input-group">
+				      <div class="input-group-addon">Depth</div>
+				      <input class="form-control" type="text" placeholder="Enter Depth">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="input-group">
+				      <div class="input-group-addon">Value</div>
+				      <input class="form-control" type="text" placeholder="Enter Value">
+				    </div>
+				  </div>
+				  <div class="form-group total">
+				    <label for="price">Total:</label>
+				    <span name="price">1000</span>
+				  </div>
+				  <div class="form-group text-right">
+				    <button type="submit" class="btn btn-red">Calculate</button>
+				  </div>
+				</form>
+			</section>
+		</div>
+		<div class="col-xs-12 col-md-4 col-md-offset-1">
+			<section class="info">
+				<div class="text-center">
+					<%= image_tag "money.png" %>
+					<h2>Prices</h2>
+				</div>
+				<ul class="rates text-center">
+					<li class="pull-left">
+						<h3>Value Rate</h3>
+						<p>2 %</p>
+					</li>
+					<li class="pull-right">
+						<h3>Size Rate</h3>
+						<p>30</p>
+					</li>
+					<div class="clearfix"></div>
+				</ul>
+				<p class="text-center text-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nobis est dolorem at tempora nulla expedita, eaque, distinctio ut accusamus consequuntur nostrum, deserunt quas explicabo tempore ipsum hic vel amet.</p>
+			</section>
+		</div>
 	</div>
 </div>
