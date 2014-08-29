@@ -59,7 +59,7 @@ body {
 	background-color: $green;
 }
 
-// Menu
+// Header
 .navbar-brand{
 	color:$green;
 	padding: 15px 0;
@@ -79,6 +79,11 @@ ul.navbar-nav li:last-child{
 	}
 }
 
+// Footer
+footer{
+	@extend .separation-3;
+	color: #fff;
+}
 // Separators
 .separation-1{
 	padding-top:35px;
@@ -89,6 +94,11 @@ ul.navbar-nav li:last-child{
 	padding-top:50px;
 	padding-bottom:20px;
 }
+.separation-3{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
 
 
 // Sections
