@@ -34,7 +34,7 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<ul class="list-unstyled list-inline title-separator">
-				<li class="align-middle"><%= image_tag "open-box.png" , class: "img-responsive img-sm"%></li>
+				<li class="align-middle"><%= image_tag "open-box.png" , class: "img-responsive img-sm", title: 'Ballicons (free) by Nick Frost is licensed under CC BY 3.0'%></li>
 				<li class="align-middle"><h3 class="no-margin">Packages</h3></li>
 			</ul>
 		</div>
@@ -57,6 +57,15 @@
 		<div class="col-md-offset-1 col-md-3 col-xs-12">
 			<%= render :partial => "package/forms/operator" %>
 	    	<p class="text-danger text-center">0 Packages found</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<ul class="list-unstyled list-inline title-separator">
+				<li class="align-middle"><%= image_tag "add.png" , class: "img-responsive img-sm", title: 'small-n-flat by Paomedi is licensed under CC BY 3.0'%></li>
+				<li class="align-middle"><h3 class="no-margin">New Package</h3></li>
+			</ul>
+			<%= render :partial => "package/forms/new" %>
 		</div>
 	</div>
 </div>

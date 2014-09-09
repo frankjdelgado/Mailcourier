@@ -24,3 +24,9 @@
 .title-separator{
 	margin-bottom: 30px;
 }
+
+#new-package{
+	input:focus, select:focus{
+		border:1px solid $green;
+	}
+}
