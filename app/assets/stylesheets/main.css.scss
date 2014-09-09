@@ -1,17 +1,10 @@
-// Variables
-$font-stack: "Source Sans Pro","Helvetica neue",helvetica,sans-serif;
-$black: #2C3E50;
-$green: #19BC9C;
-$light-green: #9EE6DA ;
-$grey: #999B9B;
-$red: #de584d;
-$dark-red: #b64032;
+@import "utilities/variables";
 
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: url(asset_path('glyphicons-halflings-regular.eot'));
   src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'), url(asset_path('glyphicons-halflings-regular.woff')) format('woff'), url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'), url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
-}
+}	
 
 // Mixins
 @mixin border-radius($radius) {
@@ -34,16 +27,23 @@ $dark-red: #b64032;
    border-color: rgba($color, $opacity);
 }
 
-// Styles
+// Global Styles
+
 body {
   font-family: $font-stack;
   color: $black;
 }
 
-// Buttons
-.btn{
-	border:none;
+#usernameLabel{
+	background:none !important;
+	&:focus,&:hover{
+		background:none !important;
+		color: $black;
+	}
 }
+
+// Buttons
+
 .btn-black{
 	background-color: $black;
 	color: #fff;
@@ -89,6 +89,17 @@ body {
 .no-radius{
 	@include border-radius(0);
 }
+.no-margin{
+	margin:0;
+}
+.align-middle{
+	vertical-align:middle;
+}
+
+.img-sm{
+	max-width:64px;
+}
+
 
 // Bootstrap
 .modal{
@@ -118,6 +129,14 @@ body {
 			outline:none;
 			border-width:2px;
 			@include border-color-opacity($green,0.5);		
+		}
+	}
+}
+
+.dropdown-menu{
+	li{
+		a {
+			color: $black;
 		}
 	}
 }

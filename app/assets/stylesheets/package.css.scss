@@ -1,0 +1,26 @@
+// Place all the styles related to the package controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "utilities/variables";
+
+#table-package{
+
+	thead{
+		background-color: $black;
+		th{
+			border-bottom: none;
+			color:#fff;
+			&:first-child{
+				border-top-left-radius: 4px;
+			}
+			&:last-child{
+				border-top-right-radius: 4px;
+			}
+		}
+	}
+}
+
+.title-separator{
+	margin-bottom: 30px;
+}

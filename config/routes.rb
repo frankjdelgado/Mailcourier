@@ -56,6 +56,17 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :packages
+  # resources :operator do
+  #   resources :packages
+  # end
+
+  # resources :user dosssss
+  #   resources :packages
+  # end
+
+  #test routes
+  get 'packages' => 'package#index'
+
+  get 'package' => 'package#show'
 
 end

@@ -2,14 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Variables
-$font-stack: "Source Sans Pro","Helvetica neue",helvetica,sans-serif;
-$black: #2C3E50 !important;
-$green: #19BC9C !important;
-$light-green: #9EE6DA !important ;
-$grey: #999B9B !important;
-$red: #de584d;
-$dark-red: #b64032;
+@import "utilities/variables";
 
 // Header
 .navbar-brand{
