@@ -11,54 +11,6 @@ $grey: #999B9B !important;
 $red: #de584d;
 $dark-red: #b64032;
 
-// Mixins
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
-
-// Styles
-body {
-  font-family: $font-stack;
-  color: $black;
-}
-
-// Buttons
-.btn{
-	border:none;
-}
-.btn-black{
-	background-color: $black;
-	color: #fff;
-}
-.btn-black:hover{
-	color: #fff;
-}
-.btn-red{
-	background-color: $red;
-	color: #fff;
-}
-.btn-red:hover{
-	color: #fff;
-}
-
-// Text
-.text-white{
-	color: #fff;
-}
-.text-black{
-	color: $black;
-}
-.text-grey{
-	color: $grey;
-}
-// Background
-.green-background{
-	background-color: $green;
-}
-
 // Header
 .navbar-brand{
 	color:$green;
@@ -98,8 +50,6 @@ footer{
 	padding-top:20px;
 	padding-bottom:20px;
 }
-
-
 
 // Sections
 .presentation{
@@ -162,4 +112,9 @@ footer{
 
 	}
 
+}
+
+// bootstrap
+#login .modal-dialog,#signup .modal-dialog{
+	width:340px;
 }

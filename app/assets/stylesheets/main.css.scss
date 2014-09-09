@@ -1,0 +1,123 @@
+// Variables
+$font-stack: "Source Sans Pro","Helvetica neue",helvetica,sans-serif;
+$black: #2C3E50;
+$green: #19BC9C;
+$light-green: #9EE6DA ;
+$grey: #999B9B;
+$red: #de584d;
+$dark-red: #b64032;
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(asset_path('glyphicons-halflings-regular.eot'));
+  src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'), url(asset_path('glyphicons-halflings-regular.woff')) format('woff'), url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'), url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
+}
+
+// Mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color;
+    background: rgba($color, $opacity);
+}
+@mixin text-color-opacity($color, $opacity: 0.3) {
+   color: $color;
+   color: rgba($color, $opacity);
+}
+@mixin border-color-opacity($color, $opacity: 0.3) {
+   border-color: $color;
+   border-color: rgba($color, $opacity);
+}
+
+// Styles
+body {
+  font-family: $font-stack;
+  color: $black;
+}
+
+// Buttons
+.btn{
+	border:none;
+}
+.btn-black{
+	background-color: $black;
+	color: #fff;
+}
+.btn-black:hover,.btn-black:focus{
+	color: #fff;
+}
+.btn-red{
+	background-color: $red;
+	color: #fff;
+}
+.btn-red:hover{
+	color: #fff;
+}
+.btn-green{
+	background-color: $green;
+	color: #fff;
+}
+.btn-green:hover{
+	color: #fff;
+}
+
+// Text
+.text-white{
+	color: #fff;
+}
+.text-black{
+	color: $black;
+}
+.text-grey{
+	color: $grey;
+}
+.text-green{
+	color: $green;
+}
+
+// Background
+.green-background{
+	background-color: $green;
+}
+
+// Helpers
+.no-radius{
+	@include border-radius(0);
+}
+
+// Bootstrap
+.modal{
+	.modal-content{
+		background-color: #FEF0E3;
+		@extend .no-radius;
+		.modal-header {
+			border-bottom: none;
+			h1{
+				@extend .text-green;
+				text-align:center;
+				text-transform:capitalize;
+			}
+		}
+		.modal-footer {
+			border-top: none;
+		}
+	}
+	.modal-body{
+		label{
+			@include text-color-opacity($green,0.5)
+		}
+		input,select,textarea{
+			@extend .no-radius;
+		}
+		.form-control{
+			outline:none;
+			border-width:2px;
+			@include border-color-opacity($green,0.5);		
+		}
+	}
+}
