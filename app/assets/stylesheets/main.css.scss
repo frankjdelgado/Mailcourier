@@ -102,6 +102,35 @@ body {
 
 
 // Bootstrap
+.navbar-right{
+	li:last-child a{
+		padding-right:0;
+	}
+}
+.navbar-full{
+	margin-bottom:20px;
+	.navbar{
+		margin-bottom:0;
+	}
+	.nav>li>a:hover, .nav>li>a:focus {
+		color: $black;
+		text-decoration: none;
+		background-color: transparent;
+	}
+}
+.navbar-green{
+	background-color:$green;
+	a{
+		color: #fff;
+	}
+}
+.navbar-white{
+	background-color:#fff;
+	a{
+		color: $green;
+	}
+}
+
 .modal{
 	.modal-content{
 		background-color: #FEF0E3;
@@ -130,6 +159,26 @@ body {
 			border-width:2px;
 			@include border-color-opacity($green,0.5);		
 		}
+	}
+}
+
+
+.form-mail{
+	h1{
+		@extend .text-green;
+		text-align:center;
+		text-transform:capitalize;
+	}
+	label{
+		@include text-color-opacity($green,0.5)
+	}
+	input,select,textarea{
+		@extend .no-radius;
+	}
+	.form-control{
+		outline:none;
+		border-width:2px;
+		@include border-color-opacity($green,0.5);		
 	}
 }
 
