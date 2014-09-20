@@ -1,0 +1,132 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<ul class="list-unstyled list-inline title-separator">
+				<li class="align-middle"><%= image_tag "open-box.png" , class: "img-responsive img-sm", title: 'Ballicons (free) by Nick Frost is licensed under CC BY 3.0'%></li>
+				<li class="align-middle"><h3 class="no-margin">Packages</h3></li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-md-8">
+			<div class="table-responsive">
+				<table class="table table-hover" id="table-package">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Description</th>
+							<th>Status</th>
+							<th>To</th>
+							<th>From</th>
+							<th>Mask As</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Headset</td>
+							<td>Pending</td>
+							<td>Username Receiver</td>
+							<td>Username Sender</td>
+							<td><button class="btn btn-xs btn-green">Delivered</button></td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Headset</td>
+							<td>Pending</td>
+							<td>Username Receiver</td>
+							<td>Username Sender</td>
+							<td><button class="btn btn-xs btn-black">Arrived</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="text-right">
+				<ul class="pagination pagination-sm">
+				  <li><a href="#">&laquo;</a></li>
+				  <li><a href="#">1</a></li>
+				  <li><a href="#">2</a></li>
+				  <li><a href="#">3</a></li>
+				  <li><a href="#">4</a></li>
+				  <li><a href="#">5</a></li>
+				  <li><a href="#">&raquo;</a></li>
+				</ul>	
+			</div>
+		</div>
+		<div class="col-md-offset-1 col-md-3 col-xs-12">
+			<form action="" role="form" method="post">
+				<div class="input-group form-group">
+			        <input type="text" class="form-control" placeholder="Search Package" name="search-term" id="search-term">
+			        <div class="input-group-btn">
+			            <button class="btn btn-green" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+			        </div>
+			    </div>
+			    <span class="text-grey">Search by...</span>
+				<div class="radio">
+					<label class="radio-inline">
+						<input checked type="radio" name="search-by" id="search-by1" value="user"> User
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="search-by" id="search-by2" value="package"> Package
+					</label>
+				</div>
+			</form>
+	    	<p class="text-danger text-center">0 Packages found</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<ul class="list-unstyled list-inline title-separator">
+				<li class="align-middle"><%= image_tag "add.png" , class: "img-responsive img-sm", title: 'small-n-flat by Paomedi is licensed under CC BY 3.0'%></li>
+				<li class="align-middle"><h3 class="no-margin">New Package</h3></li>
+			</ul>
+		<form action="" role="form" method="post" class="form-horizontal" id="new-package">
+			<div class="form-group">
+				<label for="description" class="col-sm-2 control-label text-capitalize">description</label>
+				<div class="col-xs-12 col-md-6">
+				<input required type="text" class="form-control text-capitalize" name="description" placeholder="Package Description">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="weight" class="col-sm-2 control-label text-capitalize">weight</label>
+				<div class="col-xs-12 col-md-6">
+				<input required type="text" class="form-control text-capitalize" name="weight" placeholder="Package weight">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="height" class="col-sm-2 control-label text-capitalize">height</label>
+				<div class="col-xs-12 col-md-6">
+				<input required type="text" class="form-control text-capitalize" name="height" placeholder="Package height">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="depth" class="col-sm-2 control-label text-capitalize">depth</label>
+				<div class="col-xs-12 col-md-6">
+				<input required type="text" class="form-control text-capitalize" name="depth" placeholder="Package depth">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="value" class="col-sm-2 control-label text-capitalize">value</label>
+				<div class="col-xs-12 col-md-6">
+				<input required type="text" class="form-control text-capitalize" name="value" placeholder="Package value">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Destination" class="col-sm-2 control-label text-capitalize">Destination</label>
+				<div class="col-xs-12 col-md-6">
+				<select required class="form-control" name="agency">
+					<option selected disabled value="">Select an Agency</option>
+					<option value="">Location 1</option>
+					<option value="">Location 2</option>
+					<option value="">Location 3</option>
+				</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="Receiver" class="col-sm-2 control-label text-capitalize">Receiver</label>
+				<div class="col-xs-12 col-md-6">
+				<input required type="text" class="form-control text-capitalize" name="receiver" placeholder="Receiver Username">
+				</div>
+			</div>
+		</form>
+		</div>
+	</div>
+</div>
