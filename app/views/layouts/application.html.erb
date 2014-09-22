@@ -34,20 +34,25 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 					      </button>
-					      <% if  user_signed_in? %>
-					      <a class="navbar-brand" href="/packages"><strong>Mail</strong>courier</a>
-					      <%else%>
 					      <a class="navbar-brand" href="/"><strong>Mail</strong>courier</a>
-					      <%end%>
 					    </div>
 
 					    <!-- Collect the nav links, forms, and other content for toggling -->
 					    <div class="collapse navbar-collapse" id="menu">
 					      <ul class="nav navbar-nav navbar-right">
 					      	<% if  user_signed_in? %>
+					      		<%if current_user.role != 0%>
+					      			<li><a href="/package/new" class="text-capitalize">new package</a></li>
+					      		<%end%>
+					      	<li>
+					      		<a href="/package" class="text-capitalize">packages</a>
+					      	</li>
 					      	<li>
 						      	<a id="usernameLabel" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black"><%=current_user.username%> <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="usernameLabel">
+									<li>
+										<%= link_to('Profile', edit_user_registration_path)%> 
+									</li>
 									<li>
 										<%= link_to('Logout', destroy_user_session_path, :method => :delete)%> 
 									</li>

@@ -61,13 +61,13 @@ Rails.application.routes.draw do
   #   resources :packages
   # end
 
-  # resources :user dosssss
-  #   resources :packages
+  # resources :user do
+  resources :package
   # end
 
   #test routes
-  get 'packages' => 'package#index'
+  # get 'packages' => 'package#index'
 
-  get 'package' => 'package#show'
+  # get 'package' => 'package#show'
 
 end

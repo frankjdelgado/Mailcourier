@@ -1,4 +1,8 @@
 class Package < ActiveRecord::Base
-	has_and_belongs_to_many :users
-	has_one :agency
+	
+	has_many :package_relationships
+	has_many :package_sent, -> {where(sender: true)}, class_name: 'User', through: :package_relationships
+  	has_many :package_received, -> {where(sender: false)},  class_name: 'User', through: :package_relationships
+	belongs_to :agency
+
 end

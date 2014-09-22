@@ -1,0 +1,66 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<ul class="list-unstyled list-inline title-separator">
+				<li class="align-middle"><%= image_tag "add.png" , class: "img-responsive img-sm", title: 'small-n-flat by Paomedi is licensed under CC BY 3.0'%></li>
+				<li class="align-middle"><h3 class="no-margin">New Package</h3></li>
+			</ul>
+			<%= form_for @package, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
+				<div class="form-group">
+					<label for="description" class="col-sm-2 control-label text-capitalize">description</label>
+					<div class="col-xs-12 col-md-6">
+					 <%= f.text_field :description, class: 'form-control text-capitalize', placeholder: 'Package Description', required: true%>
+					</div>
+
+				</div>
+				<div class="form-group">
+					<label for="weight" class="col-sm-2 control-label text-capitalize">weight</label>
+					<div class="col-xs-12 col-md-6">
+					<%= f.text_field :weight, class: 'form-control text-capitalize', placeholder: 'weight in kilograms', required: true%>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="height" class="col-sm-2 control-label text-capitalize">height</label>
+					<div class="col-xs-12 col-md-6">
+					<%= f.text_field :height, class: 'form-control text-capitalize', placeholder: 'height in centimeters', required: true%>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="depth" class="col-sm-2 control-label text-capitalize">depth</label>
+					<div class="col-xs-12 col-md-6">
+					<%= f.text_field :depth, class: 'form-control text-capitalize', placeholder: 'depth in centimeters', required: true%>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="value" class="col-sm-2 control-label text-capitalize">value</label>
+					<div class="col-xs-12 col-md-6">
+					<%= f.text_field :value, class: 'form-control text-capitalize', placeholder: 'value in Bsf', required: true%>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Destination" class="col-sm-2 control-label text-capitalize">Destination</label>
+					<div class="col-xs-12 col-md-6">
+					<%= select_tag(:agency_id, options_for_select(Agency.all.collect {|p| [ p.location, p.id ] }), {prompt: 'Select a Location' , class: "form-control",})%>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Sender" class="col-sm-2 control-label text-capitalize">Sender</label>
+					<div class="col-xs-12 col-md-6">
+					<%= text_field_tag :sender,'', class: 'form-control', placeholder: 'exampleUsername', required: true%>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="Receiver" class="col-sm-2 control-label text-capitalize">Receiver</label>
+					<div class="col-xs-12 col-md-6">
+					<%= text_field_tag :receiver, '',{class: 'form-control', placeholder: 'exampleUsername', required: true}%>
+					</div>
+				</div>
+
+				<div class="form-group text-right">
+					<br>
+					<%= f.submit "add package", class: "no-radius btn btn-green text-capitalize"%>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>

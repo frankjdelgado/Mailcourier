@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def after_sign_in_path_for(resource)
-		'/packages'
+		'/package'
 	end
 
 	def after_sign_out_path_for(resource)
@@ -22,6 +22,15 @@ class ApplicationController < ActionController::Base
 
 	def after_sign_up_path_for(resource)
 		'/'
+	end
+
+	private
+ 
+	def require_admin
+		if current_user.role == 0
+			flash[:error] = "You need permissions to access page"
+			redirect_to '/'
+		end
 	end
 
 end

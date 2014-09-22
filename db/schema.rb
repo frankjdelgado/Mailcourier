@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140909083157) do
+ActiveRecord::Schema.define(version: 20140922034105) do
 
   create_table "agencies", force: true do |t|
     t.string "location"
   end
+
+  create_table "package_relationships", force: true do |t|
+    t.integer "user_id"
+    t.integer "package_id"
+    t.boolean "sender"
+  end
+
+  add_index "package_relationships", ["package_id"], name: "index_package_relationships_on_package_id", using: :btree
+  add_index "package_relationships", ["user_id"], name: "index_package_relationships_on_user_id", using: :btree
 
   create_table "packages", force: true do |t|
     t.text     "description"
@@ -28,17 +37,11 @@ ActiveRecord::Schema.define(version: 20140909083157) do
     t.datetime "date_added",                 null: false
     t.datetime "date_arrived"
     t.datetime "date_delivered"
-    t.integer  "destiny"
-    t.integer  "sender"
-    t.integer  "receiver"
     t.string   "ref_number"
     t.float    "shipping_cost"
   end
 
   add_index "packages", ["agency_id"], name: "index_packages_on_agency_id", using: :btree
-  add_index "packages", ["destiny"], name: "index_packages_on_destiny", using: :btree
-  add_index "packages", ["receiver"], name: "index_packages_on_receiver", using: :btree
-  add_index "packages", ["sender"], name: "index_packages_on_sender", using: :btree
 
   create_table "packages_users", force: true do |t|
     t.integer "user_id"
@@ -48,6 +51,13 @@ ActiveRecord::Schema.define(version: 20140909083157) do
 
   add_index "packages_users", ["package_id"], name: "index_packages_users_on_package_id", using: :btree
   add_index "packages_users", ["user_id"], name: "index_packages_users_on_user_id", using: :btree
+
+  create_table "rates", force: true do |t|
+    t.float    "package"
+    t.float    "cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username",                            null: false
