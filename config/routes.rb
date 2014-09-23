@@ -57,17 +57,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  # resources :operator do
-  #   resources :packages
-  # end
-
-  # resources :user do
   resources :package
-  # end
 
-  #test routes
-  # get 'packages' => 'package#index'
-
-  # get 'package' => 'package#show'
+  get 'rate/calculate' => 'rate#calculate'
 
 end

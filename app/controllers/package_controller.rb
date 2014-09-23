@@ -22,11 +22,12 @@ class PackageController < ApplicationController
 				:description	=> params[:package][:description],
 				:weight 	  	=> params[:package][:weight],
 				:height 		=> params[:package][:height],
+				:width 		=> params[:package][:width],
 				:depth 			=> params[:package][:depth],
 				:value 			=> params[:package][:value],
 				:agency_id 		=> params[:agency_id],
 				:date_added 	=> Time.now,
-				:shipping_cost 	=> 10,
+				:shipping_cost 	=> params[:shipping_cost],
 				:ref_number 	=> "MC-"+SecureRandom.hex(10).to_s
 			)
 		
