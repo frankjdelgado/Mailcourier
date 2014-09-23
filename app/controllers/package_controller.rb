@@ -11,13 +11,12 @@ class PackageController < ApplicationController
 
 	def new
 		@package = Package.new
-
 	end
 
 	def create
 
-		@sender		= User.where(username: params[:sender]).first
-		@receiver	= User.where(username: params[:receiver]).first
+		@sender		= User.where(username: params[:sender])
+		@receiver	= User.where(username: params[:receiver])
 
 		@package = Package.new(
 				:description	=> params[:package][:description],
@@ -31,15 +30,26 @@ class PackageController < ApplicationController
 				:ref_number 	=> "MC-"+SecureRandom.hex(10).to_s
 			)
 		
-		@package.package_relationships.build(:user_id => @sender.id, :sender => true)
-		@package.package_relationships.build(:user_id => @receiver.id, :sender => false)
+		packageCreated = @package.save
 
-		if @package.save
-			flash[:notice] = "New Package added succesfully!"	
-			redirect_to '/package/new'
-		else
-			render 'new'
+		if packageCreated && (@sender.empty? || @receiver.empty?)
+			@package.destroy
+			flash[:error] = "Sender and Receiver can't be blank"
 		end
+
+		if !packageCreated
+			flash[:alert] = @package.errors.full_messages.to_sentence
+		end
+
+		if !packageCreated || @sender.empty? || @receiver.empty?
+			render :new
+		else
+			@package.package_relationships.create(:user_id => @sender.first.id, :sender => true)
+			@package.package_relationships.create(:user_id => @receiver.first.id, :sender => false)
+			flash[:notice] = "New Package added succesfully!"	
+			redirect_to new_package_path
+		end
+
 	end
 
 end
