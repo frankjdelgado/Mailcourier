@@ -5,7 +5,7 @@ class PackageController < ApplicationController
 	before_filter :require_admin, :only => [:new, :create, :update, :destroy]
 	
 	def index
-		@packages = current_user.agency.packages.agency_pending
+		@packages = current_user.agency.packages.agency_pending.page(params[:page]) 
 	end
 
 	def show

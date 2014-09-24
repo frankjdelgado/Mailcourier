@@ -19,6 +19,8 @@ class Package < ActiveRecord::Base
 	scope :delivered, -> { where(status: 2) }
 	scope :agency_pending, -> { where(status: 0) || where(status: 1)}
 
+	paginates_per 15
+
 	def status_human
 		if status == 0
 			'pending'

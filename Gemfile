@@ -42,3 +42,4 @@ gem 'spring',        group: :development
 # User Gems
 gem 'devise'
 gem 'autoprefixer-rails'
+gem 'kaminari'
