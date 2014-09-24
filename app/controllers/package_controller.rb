@@ -5,7 +5,13 @@ class PackageController < ApplicationController
 	before_filter :require_admin, :only => [:new, :create, :update, :destroy]
 	
 	def index
-		@packages = current_user.agency.packages.agency_pending.page(params[:page]) 
+
+		if current_user.is_member?
+			@packages = current_user.packages.pending.page(params[:page])
+		else
+			@packages = current_user.agency.packages.agency_pending.page(params[:page]) 
+		end
+
 	end
 
 	def show
@@ -67,7 +73,7 @@ class PackageController < ApplicationController
 
 		if @package.save
 			if @package.is_delivered?
-				flash[:notice] = "Package marked as delivered succesfully!"
+				flash[:notice] = "Package marked as delivereds succesfully!"
 			else
 				flash[:notice] = "Package marked as arrived succesfully!"
 			end

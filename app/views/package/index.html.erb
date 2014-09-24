@@ -1,4 +1,4 @@
-<% if  current_user.role == 0 %>
+<% if  current_user.is_member? %>
 	<%= render :partial => "package/users/user" %>
 <%else%>
 	<%= render :partial => "package/users/operator" %>
