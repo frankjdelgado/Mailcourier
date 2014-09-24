@@ -22,39 +22,45 @@
 					<%= image_tag "calculator.png" %>
 					<h2>Calculator</h2>
 				</div>
-				<form role="form">
-				  <div class="form-group">
-				    <div class="input-group">
-				      <div class="input-group-addon">Height</div>
-				      <input class="form-control" type="text" placeholder="Enter Height">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <div class="input-group">
-				      <div class="input-group-addon">Weight</div>
-				      <input class="form-control" type="text" placeholder="Enter Weight">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <div class="input-group">
-				      <div class="input-group-addon">Depth</div>
-				      <input class="form-control" type="text" placeholder="Enter Depth">
-				    </div>
-				  </div>
-				  <div class="form-group">
-				    <div class="input-group">
-				      <div class="input-group-addon">Value</div>
-				      <input class="form-control" type="text" placeholder="Enter Value">
-				    </div>
-				  </div>
-				  <div class="form-group total">
-				    <label for="price">Total:</label>
-				    <span name="price">1000</span>
-				  </div>
-				  <div class="form-group text-right">
-				    <button type="submit" class="btn btn-red">Calculate</button>
-				  </div>
-				</form>
+				<div class="separation-1">
+					<div class="form-group">
+						<div class="input-group">
+						  <div class="input-group-addon text-capitalize">Height</div>
+						  <input id="height" class="form-control text-capitalize" type="text" placeholder="Enter Height in centimeters">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+						  <div class="input-group-addon text-capitalize">width</div>
+						  <input id="width" class="form-control text-capitalize" type="text" placeholder="Enter wuith in centimeters">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+						  <div class="input-group-addon text-capitalize">Depth</div>
+						  <input id="depth" class="form-control" type="text" placeholder="Enter Depth centimeters">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+						  <div class="input-group-addon text-capitalize">Weight</div>
+						  <input id="weight" class="form-control text-capitalize" type="text" placeholder="Enter Weight in kilograms">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="input-group">
+						  <div class="input-group-addon text-capitalize">Value</div>
+						  <input id="value" class="form-control text-capitalize" type="text" placeholder="Enter Value in Bsf">
+						</div>
+					</div>
+					<div class="form-group total">
+						<label for="price">Total:</label>
+						<span name="price" id="price"></span>
+					</div>
+					<div class="form-group text-right">
+						<button type="button" class="btn btn-red text-capitalize" id="calc">Calculate</button>
+					</div>
+				</div>
 			</section>
 		</div>
 		<div class="col-xs-12 col-md-4 col-md-offset-2">
