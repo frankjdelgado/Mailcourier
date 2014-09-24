@@ -56,8 +56,4 @@ class Package < ActiveRecord::Base
 		end
 	end
 
-	def to_param
-		description
-	end
-
 end
