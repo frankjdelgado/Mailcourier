@@ -7,7 +7,7 @@ class PackageController < ApplicationController
 	def index
 
 		if current_user.is_member?
-			@packages = current_user.packages.pending.page(params[:page])
+			@packages = current_user.packages.page(params[:page])
 		else
 			@packages = current_user.agency.packages.agency_pending.page(params[:page]) 
 		end
@@ -71,6 +71,12 @@ class PackageController < ApplicationController
 		@package = Package.find(params[:id])
 
 		@package.status = params[:status]
+
+		if params[:status] == '1'
+			@package.date_arrived = Time.now
+		elsif params[:status] == '2'
+			@package.date_delivered = Time.now
+		end
 
 		if @package.save
 			if @package.is_delivered?
