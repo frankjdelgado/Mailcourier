@@ -14,10 +14,11 @@ class Package < ActiveRecord::Base
 	belongs_to :sender, class_name: "User", foreign_key: "sender_id"
 	belongs_to :agency
 
+	default_scope {order(status: :asc)}
 	scope :pending, -> { where(status: 0) }
 	scope :arrived, -> { where(status: 1) }
 	scope :delivered, -> { where(status: 2) }
-	scope :agency_pending, -> { where(status: 0) || where(status: 1)}
+	scope :agency_pending, -> { where.not(status: 2)}
 
 	paginates_per 15
 

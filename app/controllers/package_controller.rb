@@ -58,4 +58,22 @@ class PackageController < ApplicationController
 		end
 		render :new
 	end
+
+	def update
+
+		@package = Package.find(params[:id])
+
+		@package.status = params[:status]
+
+		if @package.save
+			if @package.is_delivered?
+				flash[:notice] = "Package marked as delivered succesfully!"
+			else
+				flash[:notice] = "Package marked as arrived succesfully!"
+			end
+		else
+			flash[:alert] = "There was an error with your request. Please, try again."
+		end
+		redirect_to package_index_path
+	end
 end
