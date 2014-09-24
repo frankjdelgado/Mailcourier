@@ -29,9 +29,9 @@
 							<td><%= package.sender.username %></td>
 							<td>
 								<% if package.is_pending?%>
-								<%=link_to("Arrived", package_path(package, :status => 1), :method => :put, :confirm => "Are you sure?", class: 'btn btn-block btn-xs btn-black')%>
+								<%=link_to("Arrived", package_path(package, :status => 1), :method => :put, data: {confirm: "Are you sure you want to mark this package as Arrived?"}, class: 'btn btn-block btn-xs btn-black')%>
 								<%elsif package.is_arrived?%>
-								<%=link_to("Delivered", package_path(package, :status => 2), :method => :put, :confirm => "Are you sure?", class: 'btn btn-block btn-xs btn-green')%>
+								<%=link_to("Delivered", package_path(package, :status => 2), :method => :put, data: {confirm: "Are you sure you want to mark this package as Delivered?"}, class: 'btn btn-block btn-xs btn-green')%>
 								<%end%>
 							</td>
 						</tr>
