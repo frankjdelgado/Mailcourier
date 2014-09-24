@@ -13,11 +13,7 @@ $(document).ready(function() {
 
 		var pack = { 'height': height, 'weight': weight, 'depth': depth, 'width': width, 'value': value};
 
-		if(!isNaN(height))
-			console.log(height);
-
 		if(!isNaN(height) && !isNaN(weight) && !isNaN(width) && !isNaN(depth) && !isNaN(value)){
-			console.log("asds");
 			$.ajax({
 				type: "GET",
 				url: '../rate/calculate',
@@ -26,8 +22,6 @@ $(document).ready(function() {
 					$('#price').text(value.message+" Bsf");
 				}
 			});
-		}else{
-			console.log(pack);
 		}
 	});
 });

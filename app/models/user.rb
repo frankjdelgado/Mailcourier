@@ -3,9 +3,11 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable,
 	     :recoverable, :rememberable, :trackable, :validatable
 
-	has_many :package_relationships
-	has_many :package_sent,   -> {where(sender: true)}, class_name: 'Package', through: :packages_relationships
-  	has_many :package_received, -> {where(sender: false)},  class_name: 'Package', through: :packages_relationships
+	has_many :packages
+	has_many :packages_sent, class_name: "Package", foreign_key: "sender_id"
+	has_many :packages_received, class_name: "Package", foreign_key: "receiver_id"
+
+  	belongs_to :agency
 
   	# Validations
 	EMAIL_REGEX = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i

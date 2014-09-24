@@ -20,22 +20,22 @@
 						</tr>
 					</thead>
 					<tbody>
+						<% @packages.each_with_index do |package,i| %>
 						<tr>
-							<td>1</td>
-							<td>Headset</td>
-							<td>Pending</td>
-							<td>Username Receiver</td>
-							<td>Username Sender</td>
-							<td><button class="btn btn-xs btn-green">Delivered</button></td>
+							<td><%= i+1 %></td>
+							<td><%= package.description %></td>
+							<td class="text-capitalize"><%= package.status_human %></td>
+							<td><%= package.receiver.username %></td>
+							<td><%= package.sender.username %></td>
+							<td>
+								<% if package.is_pending?%>
+								<button class="btn btn-xs btn-black">Arrived</button>
+								<%elsif package.is_arrived?%>
+								<button class="btn btn-xs btn-green">Delivered</button>
+								<%end%>
+							</td>
 						</tr>
-						<tr>
-							<td>1</td>
-							<td>Headset</td>
-							<td>Pending</td>
-							<td>Username Receiver</td>
-							<td>Username Sender</td>
-							<td><button class="btn btn-xs btn-black">Arrived</button></td>
-						</tr>
+						<% end %>
 					</tbody>
 				</table>
 			</div>
@@ -71,5 +71,6 @@
 			</form>
 	    	<p class="text-danger text-center">0 Packages found</p>
 		</div>
+		<p><%= %></p>
 	</div>
 </div>
