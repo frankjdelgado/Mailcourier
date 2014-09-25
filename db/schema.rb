@@ -17,15 +17,6 @@ ActiveRecord::Schema.define(version: 20140924035121) do
     t.string "location"
   end
 
-  create_table "package_relationships", force: true do |t|
-    t.integer "user_id"
-    t.integer "package_id"
-    t.boolean "sender"
-  end
-
-  add_index "package_relationships", ["package_id"], name: "index_package_relationships_on_package_id", using: :btree
-  add_index "package_relationships", ["user_id"], name: "index_package_relationships_on_user_id", using: :btree
-
   create_table "packages", force: true do |t|
     t.text     "description"
     t.float    "weight",                     null: false
