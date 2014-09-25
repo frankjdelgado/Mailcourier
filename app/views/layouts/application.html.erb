@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<% if (request.path == "/") %>
+<% if current_page?(root_path) %>
 	<div class="navbar-full navbar-white">
 <%else%>
 	<div class="navbar-full navbar-green">
@@ -39,9 +39,7 @@
 
 					    <!-- Collect the nav links, forms, and other content for toggling -->
 					    <div class="collapse navbar-collapse" id="menu">
-					      <ul class="nav navbar-nav navbar-right">
-					      	<li><%= link_to_unless I18n.locale == :en, "English", locale: :en %></li>
-					      	<li><%= link_to_unless I18n.locale == :es, "Español", locale: :es %></li>
+					      <ul class="nav navbar-nav navbar-right">		 
 					      	<% if  user_signed_in? %>
 					      		<%if !current_user.is_member?%>
 					      		<li>
@@ -51,6 +49,13 @@
 					      	<li>
 					      		<a href="/package" class="text-capitalize">packages</a>
 					      	</li>
+					      	<li>
+						      	<a id="lang" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-uppercase"><%=I18n.locale%> <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="lang">
+									<li><%= link_to("English", locale: :en )%></li>
+									<li><%= link_to("Spanish", locale: :es )%></li>
+								</ul>
+							</li>
 					      	<li>
 						      	<a id="usernameLabel" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black"><%=current_user.username%> <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="usernameLabel">
@@ -65,7 +70,15 @@
 					      	<%else%>
 						        <li><a href="/users/sign_in">LOGIN</a></li>
 						        <li><a  href="/users/sign_up">SIGN UP</a></li>
+						        <li>
+							      	<a id="lang" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-uppercase"><%=I18n.locale%> <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="lang">
+										<li><%= link_to("English", locale: :en )%></li>
+										<li><%= link_to("Spanish", locale: :es )%></li>
+									</ul>
+								</li>
 					      	<%end%>
+					      	
 					      </ul>
 					    </div><!-- /.navbar-collapse -->
 					</nav>

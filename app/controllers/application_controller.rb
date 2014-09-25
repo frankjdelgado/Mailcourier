@@ -11,6 +11,12 @@ class ApplicationController < ActionController::Base
 		I18n.locale = params[:locale] || I18n.locale
 	end
 
+	before_action :set_locale
+
+	def set_locale
+	  I18n.locale = params[:locale]
+	end
+
 	protected
 
 	def configure_permitted_parameters
