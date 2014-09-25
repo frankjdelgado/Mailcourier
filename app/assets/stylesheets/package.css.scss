@@ -30,3 +30,7 @@
 		border:1px solid $green;
 	}
 }
+
+#search-form:focus{
+	border-color:$green;
+}

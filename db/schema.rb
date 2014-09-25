@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924035121) do
+ActiveRecord::Schema.define(version: 20140925004621) do
 
   create_table "agencies", force: true do |t|
     t.string "location"
@@ -36,15 +36,6 @@ ActiveRecord::Schema.define(version: 20140924035121) do
   end
 
   add_index "packages", ["agency_id"], name: "index_packages_on_agency_id", using: :btree
-
-  create_table "packages_users", force: true do |t|
-    t.integer "user_id"
-    t.integer "package_id"
-    t.boolean "sender"
-  end
-
-  add_index "packages_users", ["package_id"], name: "index_packages_users_on_package_id", using: :btree
-  add_index "packages_users", ["user_id"], name: "index_packages_users_on_user_id", using: :btree
 
   create_table "rates", force: true do |t|
     t.float    "package"

@@ -7,11 +7,24 @@ class PackageController < ApplicationController
 	def index
 
 		if current_user.is_member?
-			@packages = current_user.packages.page(params[:page])
+			if params[:search]
+		    	@packages = current_user.packages.search_by_package(params[:search]).page(params[:page])
+		    	@count = @packages.count
+		    else
+				@packages = current_user.packages.page(params[:page])
+			end
 		else
-			@packages = current_user.agency.packages.agency_pending.page(params[:page]) 
+			if params[:search] 
+				if params[:search_by] == 'user'
+		    		@packages = Package.search_by_user(params[:search]).page(params[:page])
+		    	elsif params[:search_by] == 'package'
+		    		@packages = Package.search_by_package(params[:search]).page(params[:page])
+		    	end
+		    	@count = @packages.count
+			else
+				@packages = current_user.agency.packages.agency_pending.page(params[:page]) 
+			end
 		end
-
 	end
 
 	def show
