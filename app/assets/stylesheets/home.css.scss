@@ -67,7 +67,7 @@ footer{
 	form{
 	}
 	.input-group-addon{
-		width:66px !important;
+		width:100px !important;
 		color:#fff;
 		background-color:$red;
 		border-color:$red;
@@ -89,16 +89,17 @@ footer{
 		li{
 			list-style:none;
 			display:inline-block;
-
-			h3{
-				text-transform:uppercase;
-				color:#4fba6f;
-				margin-top: 0;
-				margin-bottom: 5px;
-			}
-			p{
-				font-size: 1.5em;
-			}
+		}
+		h3{
+			text-transform:uppercase;
+			text-align:center;
+			color:#4fba6f;
+			margin-top: 0;
+			margin-bottom: 5px;
+		}
+		p{
+			font-size: 1.5em;
+			text-align:center;
 		}
 
 	}
