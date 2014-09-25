@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery with: :exception
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
+   
+   before_action :set_locale
+ 
+  	def set_locale
+		I18n.locale = params[:locale] || I18n.locale
+	end
 
 	protected
 
@@ -25,8 +31,8 @@ class ApplicationController < ActionController::Base
 	end
 
 	private
- 
-	def require_admin
+
+ 	def require_admin
 		if current_user.role == 0
 			flash[:error] = "You need permissions to access page"
 			redirect_to '/'

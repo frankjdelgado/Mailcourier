@@ -40,6 +40,8 @@
 					    <!-- Collect the nav links, forms, and other content for toggling -->
 					    <div class="collapse navbar-collapse" id="menu">
 					      <ul class="nav navbar-nav navbar-right">
+					      	<li><%= link_to_unless I18n.locale == :en, "English", locale: :en %></li>
+					      	<li><%= link_to_unless I18n.locale == :es, "Español", locale: :es %></li>
 					      	<% if  user_signed_in? %>
 					      		<%if !current_user.is_member?%>
 					      		<li>

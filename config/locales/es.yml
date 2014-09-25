@@ -21,4 +21,14 @@
 
 es:
   hello: "Hola Mundo"
-  calculator: "Calculadora"
+  calculator: "calculadora"
+  height: "alto"
+  width: "ancho"
+  depth: "profundidad"
+  centimeters: "centímetros"
+  kilograms: "kilogramos"
+  value: "valor"
+  calculate: "calcular"
+  prices: "precios"
+  value_rate: "tasa del valor"
+  package_rate: "tasa del paquete"

@@ -21,4 +21,14 @@
 
 en:
   hello: "Hello world"
-  calculator: "Calculator"
+  calculator: "calculator"
+  height: "height"
+  width: "width"
+  depth: "depth"
+  centimeters: "centimeters"
+  kilograms: "kilograms"
+  value: "value"
+  calculate: "calculate"
+  prices: "prices"
+  value_rate: "value rate"
+  package_rate: "package rate"

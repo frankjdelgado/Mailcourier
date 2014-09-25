@@ -20,37 +20,37 @@
 			<section class="info">
 				<div class="text-center">
 					<%= image_tag "calculator.png" %>
-					<h2><%= t('calculator') %></h2>
+					<h2 class="text-capitalize"><%= t('calculator') %></h2>
 				</div>
 				<div class="separation-1">
 					<div class="form-group">
 						<div class="input-group">
-						  <div class="input-group-addon text-capitalize">Height</div>
-						  <input id="height" class="form-control" type="text" placeholder="centimeters">
+						  <div class="input-group-addon text-capitalize"><%= t('height') %></div>
+						  <input id="height" class="form-control" type="text" placeholder=<%= t('centimeters') %>>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group">
-						  <div class="input-group-addon text-capitalize">width</div>
-						  <input id="width" class="form-control" type="text" placeholder="centimeters">
+						  <div class="input-group-addon text-capitalize"><%= t('width') %></div>
+						  <input id="width" class="form-control" type="text" placeholder=<%= t('centimeters') %>>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group">
-						  <div class="input-group-addon text-capitalize">Depth</div>
-						  <input id="depth" class="form-control" type="text" placeholder="centimeters">
+						  <div class="input-group-addon text-capitalize"><%= t('depth') %></div>
+						  <input id="depth" class="form-control" type="text" placeholder=<%= t('centimeters') %>>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group">
-						  <div class="input-group-addon text-capitalize">Weight</div>
-						  <input id="weight" class="form-control" type="text" placeholder="kilograms">
+						  <div class="input-group-addon text-capitalize"><%= t('weight') %></div>
+						  <input id="weight" class="form-control" type="text" placeholder=<%= t('kilograms') %>>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group">
-						  <div class="input-group-addon text-capitalize">Value</div>
-						  <input id="value" class="form-control" type="text" placeholder="Bsf">
+						  <div class="input-group-addon text-capitalize"><%= t('value') %></div>
+						  <input id="value" class="form-control" type="text" placeholder="BsF">
 						</div>
 					</div>
 					<div class="form-group total">
@@ -58,7 +58,7 @@
 						<span name="price" id="price"></span>
 					</div>
 					<div class="form-group text-right">
-						<button type="button" class="btn btn-red text-capitalize" id="calc">Calculate</button>
+						<button type="button" class="btn btn-red text-capitalize" id="calc"><%= t('calculate') %></button>
 					</div>
 				</div>
 			</section>
@@ -67,15 +67,15 @@
 			<section class="info">
 				<div class="text-center">
 					<%= image_tag "money.png", title:'Keynote and PowerPoint icons by Magnus Emil Liisberg Helding is licensed under Free for commercial use'%>
-					<h2>Prices</h2>
+					<h2 class="text-capitalize"><%= t('prices') %></h2>
 				</div>
 				<ul class="rates text-center">
 					<li class="pull-left">
-						<h3>Value Rate</h3>
+						<h3 class="text-capitalize"><%= t('value_rate') %></h3>
 						<p><%=@costRate%></p>
 					</li>
 					<li class="pull-right">
-						<h3>Package Rate</h3>
+						<h3 class="text-capitalize"><%= t('package_rate') %></h3>
 						<p><%=@packageRate%></p>
 					</li>
 					<div class="clearfix"></div>
