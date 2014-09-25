@@ -22,6 +22,18 @@ class Package < ActiveRecord::Base
 
 	paginates_per 15
 
+
+	# Search form by ref number
+	def self.search_by_package(terms)
+    	where('ref_number= ?',terms) 
+  	end
+
+  	# Search form by username
+  	def self.search_by_user(terms)
+  		# where('receiver.username = ?', terms)
+    	joins(:sender,:receiver).where('receivers_packages.username = ? OR users.username = ?',terms,terms)
+  	end
+
 	def status_human
 		if status == 0
 			'pending'
