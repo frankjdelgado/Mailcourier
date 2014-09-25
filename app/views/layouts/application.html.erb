@@ -43,38 +43,38 @@
 					      	<% if  user_signed_in? %>
 					      		<%if !current_user.is_member?%>
 					      		<li>
-					      			<%= link_to('new package', new_package_path, class: 'text-capitalize')%> 
+					      			<%= link_to(t('new_package'), new_package_path, class: 'text-capitalize')%> 
 					      		</li>
 					      		<%end%>
 					      	<li>
-					      		<a href="/package" class="text-capitalize">packages</a>
+					      		<a href="/package" class="text-capitalize"><%= t('packages') %></a>
 					      	</li>
 					      	<li>
 						      	<a id="lang" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-uppercase"><%=I18n.locale%> <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="lang">
-									<li><%= link_to("English", locale: :en )%></li>
-									<li><%= link_to("Spanish", locale: :es )%></li>
+									<li class="text-capitalize"><%= link_to(t('english'), locale: :en )%></li>
+									<li class="text-capitalize"><%= link_to(t('spanish'), locale: :es )%></li>
 								</ul>
 							</li>
 					      	<li>
 						      	<a id="usernameLabel" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black"><%=current_user.username%> <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="usernameLabel">
-									<li>
-										<%= link_to('Profile', edit_user_registration_path)%> 
+									<li class="text-capitalize">
+										<%= link_to(t('profile'), edit_user_registration_path)%> 
 									</li>
-									<li>
-										<%= link_to('Logout', destroy_user_session_path, :method => :delete)%> 
+									<li class="text-capitalize">
+										<%= link_to(t('logout'), destroy_user_session_path, :method => :delete)%> 
 									</li>
 								</ul>
 							</li>
 					      	<%else%>
-						        <li><a href="/users/sign_in">LOGIN</a></li>
-						        <li><a  href="/users/sign_up">SIGN UP</a></li>
+						        <li class="text-uppercase"><a href="/users/sign_in"><%= t('login') %></a></li>
+						        <li class="text-uppercase"><a  href="/users/sign_up"><%= t('sign_up') %></a></li>
 						        <li>
 							      	<a id="lang" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-uppercase"><%=I18n.locale%> <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="lang">
-										<li><%= link_to("English", locale: :en )%></li>
-										<li><%= link_to("Spanish", locale: :es )%></li>
+									<li class="text-capitalize"><%= link_to(t('english'), locale: :en )%></li>
+									<li class="text-capitalize"><%= link_to(t('spanish'), locale: :es )%></li>
 									</ul>
 								</li>
 					      	<%end%>
