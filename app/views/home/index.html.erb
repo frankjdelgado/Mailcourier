@@ -16,7 +16,7 @@
 </div>
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-md-4 col-md-offset-1">
+		<div class="col-xs-12 col-md-5 col-md-offset-1">
 			<section class="info">
 				<div class="text-center">
 					<%= image_tag "calculator.png" %>
@@ -63,23 +63,22 @@
 				</div>
 			</section>
 		</div>
-		<div class="col-xs-12 col-md-4 col-md-offset-2">
+		<div class="col-xs-12 col-md-5 col-md-offset-1">
 			<section class="info">
 				<div class="text-center">
 					<%= image_tag "money.png", title:'Keynote and PowerPoint icons by Magnus Emil Liisberg Helding is licensed under Free for commercial use'%>
 					<h2 class="text-capitalize"><%= t('prices') %></h2>
 				</div>
-				<ul class="rates text-center">
-					<li class="pull-left">
+				<div class="row rates">
+					<div class="col-xs-12 col-md-6 col-sm-6">
 						<h3 class="text-capitalize"><%= t('value_rate') %></h3>
 						<p><%=@costRate%></p>
-					</li>
-					<li class="pull-right">
+					</div>
+					<div class="col-xs-12 col-md-6 col-sm-6">
 						<h3 class="text-capitalize"><%= t('package_rate') %></h3>
 						<p><%=@packageRate%></p>
-					</li>
-					<div class="clearfix"></div>
-				</ul>
+					</div>
+				</div>
 				<p class="text-center text-grey">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum nobis est dolorem at tempora nulla expedita, eaque, distinctio ut accusamus consequuntur nostrum, deserunt quas explicabo tempore ipsum hic vel amet.</p>
 			</section>
 		</div>
