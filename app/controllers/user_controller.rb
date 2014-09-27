@@ -22,12 +22,17 @@ class UserController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        if @user.update_attributes(user_params)
-            redirect_to new_users_admin_path, notice: "Updated Operator data succesfully"
-        else
-        	flash[:alert] = @user.errors.full_messages.to_sentence
-            render :edit
-        end
+
+        # if params[:commit] = "Update"
+	        if @user.update(permit_params)
+	            redirect_to users_admin_index_path, notice: "Updated Operator data succesfully"
+	        else
+	        	flash[:alert] = @user.errors.full_messages.to_sentence
+	            render :edit
+	        end
+        # else
+        	
+        # end
     end
 
     def create
@@ -57,6 +62,10 @@ class UserController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:username, :agency_id,:email, :password, :password_confirmation)
+	end
+
+	def permit_params
+		params.require(:user).permit!
 	end
 
 end

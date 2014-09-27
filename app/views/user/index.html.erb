@@ -27,7 +27,7 @@
 							<td><%= user.email %></td>
 							<td><%= user.agency.location %></td>
 							<td class="text-center">
-							<%=link_to("edit", users_admin_path(user),class: 'text-uppercase')%>
+							<%=link_to("edit", edit_users_admin_path(user),class: 'text-uppercase')%>
 							</td>
 							<td>
 							<%= link_to "delete", users_admin_path(user), method: :delete, data: {confirm: "Are you sure?"}, class: 'text-danger' %>
