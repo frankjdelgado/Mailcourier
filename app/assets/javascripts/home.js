@@ -20,6 +20,8 @@ $(document).ready(function() {
 				data: pack,
 				success: function (value) {
 					$('#price').text(value.message+" Bsf");
+				},
+				error: function (response){
 				}
 			});
 		}

@@ -58,11 +58,12 @@ Rails.application.routes.draw do
 
     root 'home#index'
 
+    get 'rate/calculate' => 'rate#calculate'
+    
     resources :package
 
     resources :users_admin, :controller => 'user'
 
     resources :rate
 
-    get 'rate/calculate' => 'rate#calculate'
 end

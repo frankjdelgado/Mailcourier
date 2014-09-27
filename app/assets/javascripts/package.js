@@ -2,8 +2,8 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready(function() {
-	$("#math").click(function() {
+// $(document).ready(function() {
+	$(document).on("click", "#math",function() {
 		console.log('click');
 		var height = $("#package_height").val();
 		var weight = $("#package_weight").val();
@@ -25,4 +25,4 @@ $(document).ready(function() {
 			}
 		});
 	});
-});
+// });
