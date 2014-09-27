@@ -13,7 +13,7 @@
 						<tr>
 							<th class="text-capitalize">#</th>
 							<th class="text-capitalize">package rate</th>
-							<th class="text-capitalize">cost rate</th>
+							<th class="text-capitalize">value rate</th>
 							<th class="text-capitalize">created at</th>
 							<th class="text-capitalize">updated at</th>
 							<th class="text-capitalize">status</th>
@@ -28,18 +28,20 @@
 							<td><%= rate.cost %></td>
 							<td><%= rate.created_at %></td>
 							<td><%= rate.updated_at %></td>
+							<% if rate.is_active?%>
 							<td class="text-center text-capitalize">
-								<% if rate.is_active?%>
 								<div class="bg-green">Active</div>
-								<%else%>
+							</td>
+							<td></td>
+							<% else%>
+							<td class="text-center text-capitalize">
 								<%=link_to("Activate", rate_path(rate, :status => 1), :method => :put, data: {confirm: "Are you sure you want to activate this rates?"}, class: 'btn btn-block btn-xs btn-black')%>
-								<%end%>
 							</td>
 							<td>
-								<% if !rate.is_active?%>
-								<%= link_to "delete", rate_path(rate), method: :delete, data: {confirm: "Are you sure?"}, class: 'text-danger' %>
-								<%end%>
+								<%= link_to "delete", rate_path(rate), method: :delete, data: {confirm: "Are you sure?"}, class: 'text-uppercase text-danger' %>
 							</td>
+
+							<%end%>
 						</tr>
 						<% end %>
 					</tbody>

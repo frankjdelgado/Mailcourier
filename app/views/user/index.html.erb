@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<ul class="list-unstyled list-inline title-separator">
+				<li class="align-middle"><%= image_tag "users.png" , class: "img-responsive img-sm", title: 'small-n-flat by Paomedia is licensed under Free for  Creative Commons 3.0'%></li>
+				<li class="align-middle"><h3 class="no-margin">Operators</h3></li>
+			</ul>
+		</div>
+		<div class="col-xs-12 col-md-8 col-md-offset-2">
+			<div class="table-responsive">
+				<table class="table table-hover" id="table-package">
+					<thead>
+						<tr>
+							<th class="text-capitalize">#</th>
+							<th class="text-capitalize">username</th>
+							<th class="text-capitalize">email</th>
+							<th class="text-capitalize">agency</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @users.each_with_index do |user,i| %>
+						<tr>
+							<td><%= i+1 %></td>
+							<td><%= user.username %></td>
+							<td><%= user.email %></td>
+							<td><%= user.agency.location %></td>
+							<td class="text-center">
+							<%=link_to("edit", users_admin_path(user),class: 'text-uppercase')%>
+							</td>
+							<td>
+							<%= link_to "delete", users_admin_path(user), method: :delete, data: {confirm: "Are you sure?"}, class: 'text-danger' %>
+							</td>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+			</div>
+			<div class="text-right">
+				<%= paginate @users %>	
+			</div>
+		</div>
+	</div>
+</div>

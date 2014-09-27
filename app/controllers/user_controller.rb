@@ -5,11 +5,11 @@ class UserController < ApplicationController
 	before_filter :require_admin
 
 	def index
-        @users = User.operators
+        @users = User.operators.page(params[:page])
     end
 
     def show
-    	@user = User.operators.find_by_id(params[:id])
+    	@user = User.operators.find(params[:id])
     end
 
     def new
@@ -40,6 +40,18 @@ class UserController < ApplicationController
             render :new
         end
     end
+
+    def destroy
+		@user = User.find(params[:id])
+
+		if @user.destroy
+			flash[:notice] = "User deleted succesfully"
+			redirect_to users_admin_path
+		else
+			flash[:error] = "There was a problem with your request. Please, try again."
+			redirect_to users_admin_path
+		end
+	end
 
     private
 

@@ -46,10 +46,10 @@
 						      		<a id="rates" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black">Rates</a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="rates">
 										<li class="text-capitalize">
-											<%= link_to "Rates List", rate_index_path, class: 'button' %> 
+											<%= link_to "Rates List", rate_index_path, class: 'text-capitalize' %> 
 										</li>
 										<li class="text-capitalize">
-											<%= link_to "Create Rates", new_rate_path, class: 'button' %>
+											<%= link_to "Create Rates", new_rate_path, class: 'text-capitalize' %>
 										</li>
 									</ul>
 					      		</li>
@@ -58,9 +58,10 @@
 					      			<a id="Operator" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black">Operator</a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="Operator">
 										<li class="text-capitalize">
+											<%= link_to "Operators List", users_admin_index_path, class: 'text-capitalize' %>
 										</li>
 										<li class="text-capitalize">
-											<%= link_to "Add Operator", new_users_admin_path, class: 'button' %>
+											<%= link_to "Add Operator", new_users_admin_path, class: 'text-capitalize' %>
 										</li>
 									</ul>
 					      		</li>
