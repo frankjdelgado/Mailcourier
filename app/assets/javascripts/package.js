@@ -4,7 +4,6 @@
 
 // $(document).ready(function() {
 	$(document).on("click", "#math",function() {
-		console.log('click');
 		var height = $("#package_height").val();
 		var weight = $("#package_weight").val();
 		var depth = $("#package_depth").val();
@@ -12,15 +11,11 @@
 		var value = $("#package_value").val();
 
 		var pack = { 'height': height, 'weight': weight, 'depth': depth, 'width': width, 'value': value};
-		console.log(pack);
 		$.ajax({
 			type: "GET",
 			url: '../rate/calculate',
 			data: pack,
 			success: function (value) {
-				console.log('success');
-				console.log(value);
-				console.log($('#shipping_cost'));
 				$('#package_shipping_cost').val(value.message);
 			}
 		});

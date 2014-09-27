@@ -4,6 +4,8 @@ class Rate < ActiveRecord::Base
 	validates :cost, presence: true, numericality: true
 
 	paginates_per 15
+
+	default_scope {order(status: :desc)}
 	scope :active, -> { where(status: 1) }
 	scope :inactive, -> { where(status: 0) }
 
