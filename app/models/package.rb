@@ -25,8 +25,8 @@ class Package < ActiveRecord::Base
 	# Send email to users
 	after_update do |package|
 		if package.is_arrived?
-			PackageMailer.arrived(package,package.sender).deliver
-			PackageMailer.arrived(package,package.receiver).deliver
+			PackageMailer.arrived(package.sender,package).deliver
+			PackageMailer.arrived(package.receiver,package).deliver
 		end
 	end
 
