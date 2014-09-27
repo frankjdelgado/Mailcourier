@@ -17,6 +17,7 @@
 							<th class="text-capitalize">created at</th>
 							<th class="text-capitalize">updated at</th>
 							<th class="text-capitalize">status</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -32,6 +33,11 @@
 								<div class="bg-green">Active</div>
 								<%else%>
 								<%=link_to("Activate", rate_path(rate, :status => 1), :method => :put, data: {confirm: "Are you sure you want to activate this rates?"}, class: 'btn btn-block btn-xs btn-black')%>
+								<%end%>
+							</td>
+							<td>
+								<% if !rate.is_active?%>
+								<%= link_to "delete", rate_path(rate), method: :delete, data: {confirm: "Are you sure?"}, class: 'text-danger' %>
 								<%end%>
 							</td>
 						</tr>

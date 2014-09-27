@@ -70,6 +70,18 @@ class RateController < ApplicationController
         redirect_to rate_index_path
 	end
 
+	def destroy
+		@rate = Rate.find(params[:id])
+
+		if @rate.destroy
+			flash[:notice] = "Rate deleted succesfully"
+			redirect_to rate_index_path
+		else
+			flash[:error] = "There was a problem with your request. Please, try again."
+			redirect_to rate_index_path
+		end
+	end
+
 	private
 
 	def rate_params

@@ -25,6 +25,7 @@ class UserController < ApplicationController
         if @user.update_attributes(user_params)
             redirect_to new_users_admin_path, notice: "Updated Operator data succesfully"
         else
+        	flash[:alert] = @user.errors.full_messages.to_sentence
             render :edit
         end
     end

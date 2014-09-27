@@ -104,7 +104,9 @@ body {
 .img-sm{
 	max-width:64px;
 }
-
+a:focus {
+	outline: none;
+}
 
 // Bootstrap
 .navbar-right{
