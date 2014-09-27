@@ -42,16 +42,17 @@ class RateController < ApplicationController
 		if !@active.blank?
 			# Deactivate
 			@active.status = 0
-			if @active.save
-				if @rate.save
-					flash[:notice] = "Rate activated succesfully!"
-		        else
-		        	flash[:alert] = @rate.errors.full_messages.to_sentence
-		        end
-			else
+			if !@active.save
 				flash[:alert] = "There was an error with your request. Please, try again."
 			end
+		else
+			if @rate.save
+				flash[:notice] = "Rate activated succesfully!"
+	        else
+	        	flash[:alert] = @rate.errors.full_messages.to_sentence
+	        end
 		end
+
 
         redirect_to rate_index_path
 	end

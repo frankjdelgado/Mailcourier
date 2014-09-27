@@ -66,7 +66,7 @@ class ApplicationController < ActionController::Base
 
 	def require_rates
 		if Rate.active.empty?
-			flash[:error] = "You need permissions to access page"
+			flash[:error] = "You can't add new packages at the momment. Please, try again later."
 			redirect_to package_index_path
 		end
 	end
