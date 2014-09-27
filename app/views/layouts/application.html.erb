@@ -41,6 +41,11 @@
 					    <div class="collapse navbar-collapse" id="menu">
 					      <ul class="nav navbar-nav navbar-right">		 
 					      	<% if  user_signed_in? %>
+					      		<%if current_user.is_admin?%>
+					      		<li>
+					      			<%= link_to "Add Operator", new_users_admin_path, class: 'button' %>
+					      		</li>
+					      		<%end%>
 					      		<%if !current_user.is_member?%>
 					      		<li>
 					      			<%= link_to(t('new_package'), new_package_path, class: 'text-capitalize')%> 

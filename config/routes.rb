@@ -60,5 +60,7 @@ Rails.application.routes.draw do
 
     resources :package
 
+    resources :users_admin, :controller => 'user'
+
     get 'rate/calculate' => 'rate#calculate'
 end

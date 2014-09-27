@@ -2,7 +2,7 @@ class PackageController < ApplicationController
 
 	before_action :authenticate_user!
 	
-	before_filter :require_admin, :only => [:new, :create, :update, :destroy]
+	before_filter :require_operator, :only => [:new, :create, :update, :destroy]
 	
 	def index
 

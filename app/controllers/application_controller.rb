@@ -5,14 +5,8 @@ class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
    
-   before_action :set_locale
+   	before_action :set_locale
  
-  	def set_locale
-		I18n.locale = params[:locale] || I18n.locale
-	end
-
-	before_action :set_locale
-
 	def set_locale
 	  I18n.locale = params[:locale]
 	end
@@ -38,8 +32,15 @@ class ApplicationController < ActionController::Base
 
 	private
 
- 	def require_admin
-		if current_user.role == 0
+ 	def require_operator
+		if current_user.is_member?
+			flash[:error] = "You need permissions to access page"
+			redirect_to '/'
+		end
+	end
+
+	def require_admin
+		if !current_user.is_admin?
 			flash[:error] = "You need permissions to access page"
 			redirect_to '/'
 		end
