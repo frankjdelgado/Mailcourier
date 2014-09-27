@@ -63,13 +63,14 @@ class PackageController < ApplicationController
 					:depth 			=> params[:package][:depth],
 					:value 			=> params[:package][:value],
 					:agency_id 		=> params[:package][:agency_id],
-					:shipping_cost 	=> params[:package][:shipping_cost],
+					:shipping_cost 	=> get_shipping_cost(params[:package][:height],params[:package][:weight],params[:package][:depth],params[:package][:width],params[:package][:value]),
 					:date_added 	=> Time.now,
 					:ref_number 	=> "MC-"+SecureRandom.hex(10).to_s,
 					:sender_id		=> sender.first.id,
 					:receiver_id	=> receiver.first.id,
 				)
 
+			# get_shipping_cost(params[:package][:height],params[:package][:weight],params[:package][:depth],params[:package][:width],params[:package][:value])
 			if @package.save
 				flash[:notice] = "New Package added succesfully!"	
 				redirect_to new_package_path
