@@ -2,14 +2,14 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-4 col-md-offset-4">	
 			<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-mail"}) do |f| %>
-				<h1>Login</h1>
+				<h1 class="text-uppercase"><%= t("login") %></h1>
 				<div class="form-group">
-					<label for="email" class="text-uppercase">Email</label>
+					<label for="email" class="text-uppercase"><%= t("email") %></label>
 					<%= f.email_field :email, autofocus: true, class: "form-control input-lg"%>
 				</div>
 				
 				<div class="form-group">
-					<label for="password" class="text-uppercase">Password</label>
+					<label for="password" class="text-uppercase"><%= t("password") %></label>
 					<%= f.password_field :password, autocomplete: "off", class: "form-control input-lg"%>
 				</div>
 
@@ -21,10 +21,10 @@
 			  	<% end -%>
 
 				<div class="form-group">
-					<%= f.submit "Sign up", class: "no-radius btn btn-green btn-block btn-lg text-uppercase"%>
+					<%= f.submit t("login"), class: "no-radius btn btn-green btn-block btn-lg text-uppercase"%>
 				</div>
 				<div class="form-group text-right">
-					<a href="/users/password/new">Forgot your password?</a>
+					<a href="/users/password/new" class="text-capitalize"><%= t("forgot")+" "+t("your")+" "+t("password")+"?" %></a>
 				</div>
 			<% end %>
 		</div>
