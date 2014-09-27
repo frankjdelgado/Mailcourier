@@ -43,6 +43,9 @@
 					      	<% if  user_signed_in? %>
 					      		<%if current_user.is_admin?%>
 					      		<li>
+					      			<%= link_to "Add Rates", new_rate_path, class: 'button' %>
+					      		</li>
+					      		<li>
 					      			<%= link_to "Add Operator", new_users_admin_path, class: 'button' %>
 					      		</li>
 					      		<%end%>

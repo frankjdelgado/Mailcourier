@@ -26,4 +26,24 @@ class RateController < ApplicationController
 
 	end
 
+	def new
+		@rate = Rate.new
+	end
+
+	def create
+		@rate = Rate.new(rate_params)
+        if @rate.save
+            redirect_to rate_index_path, notice: "New rates created succesfully!" 
+        else
+        	flash[:alert] = @user.errors.full_messages.to_sentence
+            render :new
+        end
+	end
+
+	private
+
+	def rate_params
+		params.require(:rate).permit(:package, :cost)
+	end
+
 end

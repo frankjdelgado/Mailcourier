@@ -35,6 +35,7 @@ class UserController < ApplicationController
         if @user.save
             redirect_to new_users_admin_path, notice: "Operator succesfully created!" 
         else
+        	flash[:alert] = @user.errors.full_messages.to_sentence
             render :new
         end
     end
