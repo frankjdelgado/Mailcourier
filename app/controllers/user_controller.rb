@@ -42,14 +42,14 @@ class UserController < ApplicationController
     end
 
     def destroy
-		@user = User.find(params[:id])
+		@user = User.operators.find(params[:id])
 
 		if @user.destroy
 			flash[:notice] = "User deleted succesfully"
-			redirect_to users_admin_path
+			redirect_to users_admin_index_path
 		else
 			flash[:error] = "There was a problem with your request. Please, try again."
-			redirect_to users_admin_path
+			redirect_to users_admin_index_path
 		end
 	end
 
