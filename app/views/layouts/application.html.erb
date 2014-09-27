@@ -41,14 +41,44 @@
 					    <div class="collapse navbar-collapse" id="menu">
 					      <ul class="nav navbar-nav navbar-right">		 
 					      	<% if  user_signed_in? %>
-					      		<%if !current_user.is_member?%>
+					      		<%if current_user.is_admin?%>
 					      		<li>
-					      			<%= link_to(t('new_package'), new_package_path, class: 'text-capitalize')%> 
+						      		<a id="rates" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black">Rates</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="rates">
+										<li class="text-capitalize">
+											<%= link_to "Rates List", rate_index_path, class: 'text-capitalize' %> 
+										</li>
+										<li class="text-capitalize">
+											<%= link_to "Create Rates", new_rate_path, class: 'text-capitalize' %>
+										</li>
+									</ul>
+					      		</li>
+
+					      		<li>
+					      			<a id="Operator" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black">Operator</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="Operator">
+										<li class="text-capitalize">
+											<%= link_to "Operators List", users_admin_index_path, class: 'text-capitalize' %>
+										</li>
+										<li class="text-capitalize">
+											<%= link_to "Add Operator", new_users_admin_path, class: 'text-capitalize' %>
+										</li>
+									</ul>
 					      		</li>
 					      		<%end%>
-					      	<li>
-					      		<a href="/package" class="text-capitalize"><%= t('packages') %></a>
-					      	</li>
+					      		<li>
+					      			<a id="Packages" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black">Packages</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="Packages">
+										<li class="text-capitalize">
+											<%= link_to(t('packages list'), package_index_path, class: 'text-capitalize')%>
+										</li>
+					      				<%if !current_user.is_member?%>
+										<li class="text-capitalize">
+											<%= link_to(t('new_package'), new_package_path, class: 'text-capitalize')%> 
+										</li>
+					      				<%end%>
+									</ul>
+					      		</li>
 					      	<li>
 						      	<a id="lang" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-uppercase"><%=I18n.locale%> <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="lang">

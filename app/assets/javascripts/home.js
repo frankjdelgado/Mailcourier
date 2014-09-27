@@ -2,26 +2,26 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready(function() {
-	$("#calc").click(function() {
+$(document).on("click", "#calc",function() {
 
-		var height = parseInt($("#height").val());
-		var weight = parseInt($("#weight").val());
-		var depth = parseInt($("#depth").val());
-		var width = parseInt($("#width").val());
-		var value = parseInt($("#value").val());
+	var height = parseInt($("#height").val());
+	var weight = parseInt($("#weight").val());
+	var depth = parseInt($("#depth").val());
+	var width = parseInt($("#width").val());
+	var value = parseInt($("#value").val());
 
-		var pack = { 'height': height, 'weight': weight, 'depth': depth, 'width': width, 'value': value};
+	var pack = { 'height': height, 'weight': weight, 'depth': depth, 'width': width, 'value': value};
 
-		if(!isNaN(height) && !isNaN(weight) && !isNaN(width) && !isNaN(depth) && !isNaN(value)){
-			$.ajax({
-				type: "GET",
-				url: '../rate/calculate',
-				data: pack,
-				success: function (value) {
-					$('#price').text(value.message+" Bsf");
-				}
-			});
-		}
-	});
+	if(!isNaN(height) && !isNaN(weight) && !isNaN(width) && !isNaN(depth) && !isNaN(value)){
+		$.ajax({
+			type: "GET",
+			url: '../rate/calculate',
+			data: pack,
+			success: function (value) {
+				$('#price').text(value.message+" Bsf");
+			},
+			error: function (response){
+			}
+		});
+	}
 });

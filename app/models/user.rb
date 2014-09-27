@@ -14,6 +14,13 @@ class User < ActiveRecord::Base
 	validates :username, presence: true, uniqueness: true
 	validates :email, presence: true, uniqueness: true
 
+	default_scope {order(username: :asc)}
+	scope :admins, -> { where(role: 2) }
+	scope :operators, -> { where(role: 1) }
+	scope :members, -> { where(role: 0) }
+
+	paginates_per 15
+
 	def is_admin?
 		if role == 2
 			return true

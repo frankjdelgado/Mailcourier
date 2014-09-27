@@ -85,6 +85,11 @@ body {
 	background-color: $green;
 }
 
+// Label
+.bg-green{
+	background-color: #5cb85c;
+	color:#fff;
+}
 // Helpers
 .no-radius{
 	@include border-radius(0);
@@ -99,7 +104,9 @@ body {
 .img-sm{
 	max-width:64px;
 }
-
+a:focus {
+	outline: none;
+}
 
 // Bootstrap
 .navbar-right{
