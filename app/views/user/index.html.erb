@@ -25,7 +25,7 @@
 							<td><%= i+1 %></td>
 							<td><%= user.username %></td>
 							<td><%= user.email %></td>
-							<td><%= user.agency.location %></td>
+							<td><%= user.agency.try(:location) %></td>
 							<td class="text-center">
 							<%=link_to("edit", edit_users_admin_path(user),class: 'text-uppercase')%>
 							</td>

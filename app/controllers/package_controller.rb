@@ -4,6 +4,8 @@ class PackageController < ApplicationController
 	
 	before_filter :require_operator, :only => [:new, :create, :update, :destroy]
 	
+	before_filter :require_rates, :only => [:new, :create, :update]
+
 	def index
 
 		if current_user.is_member?

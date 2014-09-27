@@ -7,26 +7,26 @@
 				<h1><%= t("sign_up") %></h1>
 				<div class="form-group">
 					<label for="email" class="text-uppercase"><%= t('email') %></label>
-					<%= f.email_field :email, autofocus: true, class: "form-control input-lg", placeholder: t("enter")+" "+t("email") %>
+					<%= f.email_field :email, autofocus: true, required: true, class: "form-control input-lg", placeholder: t("enter")+" "+t("email") %>
 				</div>
 
 				<div class="form-group">
 					<label for="username" class="text-uppercase"><%= t("username") %></label>
-					<input type="text" class="form-control input-lg" id="user_username" name="user[username]" placeholder= <%= t("enter_username") %> >
+					<%= f.text_field :username, required:true, class: "form-control input-lg", placeholder: t("enter_username")%>
 				</div>
 
 				<div class="form-group">
 					<label for="location" class="text-uppercase"><%= t("reception_center") %> <span title="prefered package reception center" class="glyphicon glyphicon-info-sign"></span></label>
-					<%= select_tag(:agency, options_for_select(Agency.all.collect {|p| [ p.location, p.id ] }), {prompt: t('select_a_location') , class: "form-control input-lg", id: "user_agency_id", name: "user[agency_id]" })%>
+					<%= f.collection_select(:agency_id, Agency.all, :id, :location, {include_blank: 'Select a location'},{class: "form-control input-lg", required: true}) %>
 				</div>
 				<div class="form-group">
 			 		<%= f.label :password, class: "text-uppercase" %> <% if @validatable %><i>(<%= @minimum_password_length %> <%= t("characters")+" "+t("minimum") %>)</i><% end %><br />
-			    	<%= f.password_field :password, autocomplete: "off", class: "form-control input-lg" %>
+			    	<%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", required: true %>
 				</div>
 
 			  	<div class="form-group">
 			  		<%= f.label :password_confirmation , class: "text-uppercase"%><br />
-			    	<%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg"  %>
+			    	<%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg", required: true %>
 				</div>
 
 			  	<div class="form-group">

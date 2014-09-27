@@ -82,8 +82,8 @@
 					      	<li>
 						      	<a id="lang" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-uppercase"><%=I18n.locale%> <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu" aria-labelledby="lang">
-									<li class="text-capitalize"><%= link_to(t('english'), locale: :en )%></li>
-									<li class="text-capitalize"><%= link_to(t('spanish'), locale: :es )%></li>
+									<li class="text-capitalize"><%= link_to(t('english'),lang_path(:locale => 'en'))%></li>
+									<li class="text-capitalize"><%= link_to(t('spanish'),lang_path(:locale => 'es'))%></li>
 								</ul>
 							</li>
 					      	<li>
@@ -103,8 +103,8 @@
 						        <li>
 							      	<a id="lang" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-uppercase"><%=I18n.locale%> <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="lang">
-									<li class="text-capitalize"><%= link_to(t('english'), locale: :en )%></li>
-									<li class="text-capitalize"><%= link_to(t('spanish'), locale: :es )%></li>
+									<li class="text-capitalize"><%= link_to(t('english'),lang_path(:locale => 'en'))%></li>
+									<li class="text-capitalize"><%= link_to(t('spanish'),lang_path(:locale => 'es'))%></li>
 									</ul>
 								</li>
 					      	<%end%>

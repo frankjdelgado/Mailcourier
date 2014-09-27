@@ -6,11 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Agency.create(location: "Location 1")
-Agency.create(location: "Location 2")
-Agency.create(location: "Location 3")
-Agency.create(location: "Location 4")
-Agency.create(location: "Location 5")
-Agency.create(location: "Location 6")
-Agency.create(location: "Location 7")
-Agency.create(location: "Location 8")
+10.times do |i|
+  Agency.create(location: "Location ##{i}")
+end
+
+3.times do |i|
+	User.create(username: "user#{i}", role: i, email: "user#{i}@a.com", password: "12345678", agency_id: Agency.first.id)
+end
