@@ -43,7 +43,7 @@
 					      	<% if  user_signed_in? %>
 					      		<%if current_user.is_admin?%>
 					      		<li>
-						      		<a id="rates" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black"><%= t("rates") %></a>
+						      		<a id="rates" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize"><%= t("rates") %></a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="rates">
 										<li class="text-capitalize">
 											<%= link_to t("rates_list"), rate_index_path, class: 'text-capitalize' %> 
@@ -55,7 +55,7 @@
 					      		</li>
 
 					      		<li>
-					      			<a id="Operator" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black"><%= t("operator") %></a>
+					      			<a id="Operator" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize"><%= t("operators") %></a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="Operator">
 										<li class="text-capitalize">
 											<%= link_to t("operators_list"), users_admin_index_path, class: 'text-capitalize' %>
@@ -67,7 +67,7 @@
 					      		</li>
 					      		<%end%>
 					      		<li>
-					      			<a id="Packages" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black"><%= t("packages") %></a>
+					      			<a id="Packages" role="button" data-toggle="dropdown" data-target="#" href="" class="text-black text-capitalize"><%= t("packages") %></a>
 									<ul class="dropdown-menu" role="menu" aria-labelledby="Packages">
 										<li class="text-capitalize">
 											<%= link_to(t('packages_list'), package_index_path, class: 'text-capitalize')%>

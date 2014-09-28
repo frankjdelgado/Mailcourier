@@ -4,21 +4,21 @@
 			<%= form_for(@rate, url: rate_index_path(@rate), html: {class: "form-mail"}) do |f| %>
 			  <% devise_flash %>
 
-				<h1>Create new rates</h1>
+				<h1 class="text-capitalize"><%=t('create_new_rates')%></h1>
 				<br>
 
 			  	<div class="form-group">
-			  		<%= f.label :package,'package rate' , class: "text-uppercase"%>
+			  		<%= f.label :package,t('package_rate') , class: "text-uppercase"%>
 			    	<%= f.text_field :package, autocomplete: "off", required: true, class: "form-control input-lg"  %>
 				</div>
 
 				<div class="form-group">
-			  		<%= f.label :cost ,'cost rate', class: "text-uppercase"%>
+			  		<%= f.label :cost ,t('value_rate'), class: "text-uppercase"%>
 			    	<%= f.text_field :cost, autocomplete: "off", required: true, class: "form-control input-lg"  %>
 				</div>
 
 			  	<div class="form-group">
-			  		<%= f.submit "Add rates", class: "no-radius btn btn-green btn-block btn-lg text-uppercase", data: {confirm: "Are you sure you want create this rate configuration?"}%>
+			  		<%= f.submit class: "no-radius btn btn-green btn-block btn-lg text-uppercase", data: {confirm: t('ask_create_rate')}%>
 			  	</div>
 			<% end %>
 		</div>

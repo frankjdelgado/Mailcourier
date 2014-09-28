@@ -3,40 +3,40 @@
 		<div class="col-xs-12">
 			<ul class="list-unstyled list-inline title-separator">
 				<li class="align-middle"><%= image_tag "close-box.png" , class: "img-responsive", title: 'Ballicons 2 Free by Pixel Buddha is licensed under CC BY 3.0'%></li>
-				<li class="align-middle"><h3 class="no-margin">Package Details</h3></li>
+				<li class="align-middle"><h3 class="no-margin text-capitalize"><%=t('package_details')%></h3></li>
 			</ul>
 		</div>
 		<div class="col-xs-12">
 			<dl class="dl-horizontal">
-				<dt class="text-uppercase">Reference Number</dt>
+				<dt class="text-capitalize"><%=t('reference_number')%></dt>
 				<dd><%= @package.ref_number%></dd>
-				<dt class="text-capitalize">description</dt>
+				<dt class="text-capitalize"><%=t('description')%></dt>
 				<dd><%= @package.description%></dd>
-				<dt class="text-capitalize">From</dt>
+				<dt class="text-capitalize"><%=t('from')%></dt>
 				<dd><%= @package.sender.username%></dd>
-				<dt class="text-capitalize">To</dt>
+				<dt class="text-capitalize"><%=t('to')%></dt>
 				<dd><%= @package.receiver.username%></dd>
-				<dt class="text-capitalize">status</dt>
+				<dt class="text-capitalize"><%=t('status')%></dt>
 				<dd class="text-capitalize"><%= @package.status_human%></dd>
-				<dt class="text-capitalize">weight</dt>
+				<dt class="text-capitalize"><%=t('weight')%></dt>
 				<dd><%= @package.weight%> kg</dd>
-				<dt class="text-capitalize">height</dt>
+				<dt class="text-capitalize"><%=t('height')%></dt>
 				<dd><%= @package.height%> cm</dd>
-				<dt class="text-capitalize">width</dt>
+				<dt class="text-capitalize"><%=t('width')%></dt>
 				<dd><%= @package.width%> cm</dd>
-				<dt class="text-capitalize">depth</dt>
+				<dt class="text-capitalize"><%=t('depth')%></dt>
 				<dd><%= @package.depth%> cm</dd>
-				<dt class="text-capitalize">value</dt>
+				<dt class="text-capitalize"><%=t('value')%></dt>
 				<dd><%= @package.value%> Bsf</dd>
-				<dt class="text-capitalize">agency</dt>
+				<dt class="text-capitalize"><%=t('agency')%></dt>
 				<dd><%= @package.agency.location%></dd>
-				<dt class="text-capitalize">Shipping Cost</dt>
+				<dt class="text-capitalize"><%=t('shipping_cost')%></dt>
 				<dd><%= @package.shipping_cost%> Bsf</dd>
-				<dt class="text-capitalize">Date Added</dt>
+				<dt class="text-capitalize"><%=t('date_added')%></dt>
 				<dd><%= @package.date_added%></dd>
-				<dt class="text-capitalize">Date Arrived</dt>
+				<dt class="text-capitalize"><%=t('date_arrived')%></dt>
 				<dd><%= @package.date_arrived%></dd>
-				<dt class="text-capitalize">Date Delivered</dt>
+				<dt class="text-capitalize"><%=t('date_delivered')%></dt>
 				<dd><%= @package.date_delivered%></dd>
 			</dl>
 		</div>

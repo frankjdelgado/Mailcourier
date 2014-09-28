@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  helpers:
+    submit:
+        create: "Add %{model}"
   hello: "Hello world"
   calculator: "calculator"
   weight: "weight"
@@ -46,12 +49,12 @@ en:
   enter: "enter"
   username: "username"
   password: "password"
-  enter_email: "enter email"
-  enter_username: "enter username"
+  enter_email: "Enter email"
+  enter_username: "Enter username"
   reception_center: "reception center"
   characters: "characters"
   minimum: "minimum"
-  select_a_location: "select a location"
+  select_a_location: "Select a location"
   forgot: "forgot"
   your: "your"
   ref_number: "Ref. Number"
@@ -60,16 +63,16 @@ en:
   status: "status"
   details: "details"
   view: "view"
-  search: "search"
+  search: "Search"
   by: "by"
   packages_found: "packages found"
   reference_number: "reference number"
   to: "to"
   from: "from"
-  mask_as: "mask as"
+  mark_as: "mark as"
   arrived: "arrived"
   delivered: "delivered"
-  user: "user"
+  user: "User"
   new: "new"
   package: "package"
   package_description: "package description"
@@ -84,6 +87,7 @@ en:
   rates_list: "rates list"
   create_rates: "create rates"
   operator: "operator"
+  operators: "operators"
   operators_list: "operators list"
   packages_list: "packages list"
   edit: "edit"
@@ -102,6 +106,44 @@ en:
   didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
   didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
   sign_in_with: sign in with
-
-
-
+  remember_me: Remember me
+  password: password
+  pending: pending
+  created_at: created at
+  updated_at: updated at
+  active: active
+  create_new_rates: create new rates
+  add_rates: add rates
+  ask_activate_rate: Are you sure you want to activate this rates?
+  ask_create_rate: Are you sure you want create this rate configuration?
+  ask_sure: Are you sure?
+  activate: activate
+  delete: delete
+  agency: agency
+  add_operator: add operator
+  add_new_operator: add new operator
+  edit_profile: edit profile
+  date_added: date added
+  date_arrived: date arrived
+  date_delivered: date delivered
+  package_details: package details
+  current_password: current password
+  forgot_password: Forgot your password?
+  send_instructions: Send me instructions
+  change_password: Change password
+  new_password: new password
+  confirm_new_password: confirm new password
+  permissions: You can't access that page
+  cant_add_packages: "You can't add new packages at the momment. Please, try again later."
+  sender_receiver_valid: Sender and Receiver must be valid usernames
+  receiver: receiver
+  new_package_success: New Package added succesfully!
+  package_mark_delivered: Package marked as delivereds succesfully!
+  package_mark_arrived: Package marked as arrived succesfully!
+  request_error: "There was an error with your request. Please, try again."
+  rate_added_success: "New rates created succesfully!"
+  rate_activated_success: "Rate activated succesfully!"
+  rate_deleted_success: Rate deleted succesfully
+  operator_added_success: Operator succesfully created
+  operator_updated_success: Updated Operator data succesfully
+  operator_deleted_success: User deleted succesfully

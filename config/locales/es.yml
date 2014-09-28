@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
+  activerecord:
+    models:
+      rate: "tarifa"
+  helpers:
+    submit:
+        create: "Agregar %{model}"
   hello: "Hola Mundo"
   calculator: "calculadora"
   weight: "peso"
@@ -31,27 +37,29 @@ es:
   value: "valor"
   calculate: "calcular"
   prices: "precios"
-  value_rate: "tasa del valor"
-  package_rate: "tasa del paquete"
+  value_rate: "tarifa por valor"
+  package_rate: "tarifa por dimensión"
   packages: "paquetes"
   english: "inglés"
   spanish: "español"
   new_package: "nuevo paquete"
-  #package: "package"
   profile: "perfil"
   logout: "salir"
-  login: "entrar"
+  login: "ingresar"
   sign_up: "registro"
   email: "correo electrónico"
   enter: "ingrese"
   username: "nombre de usuario"
   password: "contraseña"
-  enter_username: "ingrese nombre de usuario"
+  password_confirmation: "confirmación de contraseña"
+  enter_email: "Ingrese correo electrónico"
+  enter_username: "Ingrese nombre de usuario"
   reception_center: "centro de recepción"
   characters: "caracteres"
   minimum: "mínimo"
-  select_a_location: "seleccione una dirección"
-  forgot: "olvidó"
+  agency: agencia
+  select_a_location: "Seleccione una agencia"
+  forgot: "¿olvidó"
   your: "su"
   ref_number: "Num. de Referencia"
   description: "descripción"
@@ -59,16 +67,16 @@ es:
   status: "estado"
   details: "detalles"
   view: "ver"
-  search: "buscar"
+  search: "Buscar"
   by: "por"
   packages_found: "paquetes encontrados"
   reference_number: "número de referencia"
   to: "para"
   from: "de"
-  mask_as: "enmascarar como"
-  arrived: "llegado"
+  mark_as: "marcar como"
+  arrived: "recibido"
   delivered: "entregado"
-  user: "usuario"
+  user: "Usuario"
   new: "nuevo" 
   package: "paquete" 
   package_description: "descripción del paquete"
@@ -79,10 +87,11 @@ es:
   shipping_cost: "costo del envío"
   press_the_button_to_calculate: "presione el botón para calcular"
   add: "agregar"
-  rates: "tasas"
-  rates_list: "lista de tasas"
-  create_rates: "crear tasas"
+  rates: "tarifas"
+  rates_list: "lista de tarifas"
+  create_rates: "crear tarifa"
   operator: "operador"
+  operators: "operadores"
   operators_list: "lista de operadores"
   packages_list: "lista de paquetes"
   edit: "editar"
@@ -101,4 +110,42 @@ es:
   didnt_receive_confirmation_instructions: "No recibió las instrucciones de confirmación?"
   didnt_receive_unlock_instructions: "No recibió las instrucciones de desbloqueo?"
   sign_in_with: Ingrese con 
-
+  remember_me: Recordarme
+  pending: pending
+  created_at: creación
+  updated_at: actualización
+  active: activado
+  create_new_rates: crear nueva tarifa
+  add_rates: agregar tarifa
+  ask_activate_rate: ¿Está seguro de que quiere activar esta tarifa?
+  ask_create_rate: ¿Está seguro de que quiere crear esta tarifa?
+  ask_sure: ¿Está seguro?
+  activate: activar
+  delete: borrar
+  add_operator: agregar operador
+  add_new_operator: agregar nuevo operador
+  edit_profile: editar perfil
+  date_added: fecha de registro
+  date_arrived: fecha de llegada
+  date_delivered: fecha de entrega
+  package_details: detalles del paquete
+  current_password: clave actual
+  forgot_password: ¿Olvidó su contraseña?
+  send_instructions: envíame las instrucciones
+  change_password: cambiar contraseña
+  new_password: nueva contraseña
+  confirm_new_password: confirme nueva contraseña
+  permissions: Usted no puede acceder a esa dirección
+  cant_add_packages: "Usted no puede agregar nuevos paquetes en este momento. Por favor, pruebe en otra ocasión."
+  sender_receiver_valid: El nombre de usuario del remitente y destinatario deben ser validos
+  receiver: destinatario
+  new_package_success: ¡El paquete ha sido agregado exitosamente!
+  package_mark_delivered: El paquete ha sido marcado como entregado exitosamente
+  package_mark_arrived: El paquete ha sido marcado como recibido exitosamente
+  request_error: "Hubo un error con su petición. Por favor, intentelo de nuevo"
+  rate_added_success: ¡La nueva tarifa ha sido creada exitosamente!
+  rate_activated_success: ¡La tarifa ha sido activada exitosamente!
+  rate_deleted_success: La tarifa ha sido eliminada exitosamente
+  operator_added_success: Operador creado con éxito
+  operator_updated_success: Operador actualizado exitosamente
+  operator_deleted_success: Operador borrado exitosamente

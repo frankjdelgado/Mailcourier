@@ -43,11 +43,11 @@ class Package < ActiveRecord::Base
 
 	def status_human
 		if status == 0
-			'pending'
+			I18n.t('pending')
 		elsif status == 1
-			'arrived'
+			I18n.t('arrived')
 		else
-			'delivered'
+			I18n.t('delivered')
 		end	
 	end
 

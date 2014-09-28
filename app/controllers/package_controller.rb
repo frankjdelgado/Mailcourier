@@ -43,7 +43,7 @@ class PackageController < ApplicationController
 		receiver	= User.where(username: params[:receiver])
 
 		if sender.empty? || receiver.empty?
-			flash[:error] = "Sender and Receiver must be valid usernames"
+			flash[:error] = I18n.t('sender_receiver_valid')
 			@package = Package.new(
 					:description	=> params[:package][:description],
 					:weight 	  	=> params[:package][:weight],
@@ -72,7 +72,7 @@ class PackageController < ApplicationController
 
 			# get_shipping_cost(params[:package][:height],params[:package][:weight],params[:package][:depth],params[:package][:width],params[:package][:value])
 			if @package.save
-				flash[:notice] = "New Package added succesfully!"	
+				flash[:notice] = I18n.t('new_package_success')
 				redirect_to new_package_path
 				return
 			else
@@ -96,12 +96,12 @@ class PackageController < ApplicationController
 
 		if @package.save
 			if @package.is_delivered?
-				flash[:notice] = "Package marked as delivereds succesfully!"
+				flash[:notice] = I18n.t('package_mark_delivered')
 			else
-				flash[:notice] = "Package marked as arrived succesfully!"
+				flash[:notice] = I18n.t('package_mark_arrived')
 			end
 		else
-			flash[:alert] = "There was an error with your request. Please, try again."
+			flash[:alert] = I18n.t('request_error')
 		end
 		redirect_to package_index_path
 	end

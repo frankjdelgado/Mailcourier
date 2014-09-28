@@ -3,7 +3,7 @@
 		<div class="col-xs-12">
 			<ul class="list-unstyled list-inline title-separator">
 				<li class="align-middle"><%= image_tag "users.png" , class: "img-responsive img-sm", title: 'small-n-flat by Paomedia is licensed under Free for  Creative Commons 3.0'%></li>
-				<li class="align-middle"><h3 class="no-margin">Operators</h3></li>
+				<li class="align-middle"><h3 class="no-margin text-capitalize"><%=t('operators')%></h3></li>
 			</ul>
 		</div>
 		<div class="col-xs-12 col-md-8 col-md-offset-2">
@@ -12,9 +12,9 @@
 					<thead>
 						<tr>
 							<th class="text-capitalize">#</th>
-							<th class="text-capitalize">username</th>
-							<th class="text-capitalize">email</th>
-							<th class="text-capitalize">agency</th>
+							<th class="text-capitalize"><%=t('username')%></th>
+							<th class="text-capitalize"><%=t('email')%></th>
+							<th class="text-capitalize"><%=t('agency')%></th>
 							<th></th>
 							<th></th>
 						</tr>
@@ -27,10 +27,10 @@
 							<td><%= user.email %></td>
 							<td><%= user.agency.try(:location) %></td>
 							<td class="text-center">
-							<%=link_to("edit", edit_users_admin_path(user),class: 'text-uppercase')%>
+							<%=link_to( t("edit"), edit_users_admin_path(user),class: 'text-uppercase')%>
 							</td>
 							<td>
-							<%= link_to "delete", users_admin_path(user), method: :delete, data: {confirm: "Are you sure?"}, class: 'text-danger' %>
+							<%= link_to t("delete"), users_admin_path(user), method: :delete, data: {confirm: t('ask_sure')}, class: 'text-danger text-uppercase' %>
 							</td>
 						</tr>
 						<% end %>

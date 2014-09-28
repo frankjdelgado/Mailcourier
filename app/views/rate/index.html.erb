@@ -3,7 +3,7 @@
 		<div class="col-xs-12">
 			<ul class="list-unstyled list-inline title-separator">
 				<li class="align-middle"><%= image_tag "money.png" , class: "img-responsive img-sm", title: 'Keynote and PowerPoint icons by Magnus Emil Liisberg Helding is licensed under Free for commercial use'%></li>
-				<li class="align-middle"><h3 class="no-margin">Rates</h3></li>
+				<li class="align-middle"><h3 class="no-margin text-capitalize"><%=t('rates')%></h3></li>
 			</ul>
 		</div>
 		<div class="col-xs-12 col-md-8">
@@ -12,11 +12,11 @@
 					<thead>
 						<tr>
 							<th class="text-capitalize">#</th>
-							<th class="text-capitalize">package rate</th>
-							<th class="text-capitalize">value rate</th>
-							<th class="text-capitalize">created at</th>
-							<th class="text-capitalize">updated at</th>
-							<th class="text-capitalize">status</th>
+							<th class="text-capitalize"><%=t('package_rate')%></th>
+							<th class="text-capitalize"><%=t('value_rate')%></th>
+							<th class="text-capitalize"><%=t('created_at')%></th>
+							<th class="text-capitalize"><%=t('updated_at')%></th>
+							<th class="text-capitalize"><%=t('status')%></th>
 							<th></th>
 						</tr>
 					</thead>
@@ -30,15 +30,15 @@
 							<td><%= rate.updated_at %></td>
 							<% if rate.is_active?%>
 							<td class="text-center text-capitalize">
-								<div class="bg-green">Active</div>
+								<div class="btn btn-xs text-capitalize label-green btn-block"><%=t('active')%></div>
 							</td>
 							<td></td>
 							<% else%>
 							<td class="text-center text-capitalize">
-								<%=link_to("Activate", rate_path(rate, :status => 1), :method => :put, data: {confirm: "Are you sure you want to activate this rates?"}, class: 'btn btn-block btn-xs btn-black')%>
+								<%=link_to(t("activate"), rate_path(rate, :status => 1), :method => :put, data: {confirm: t("ask_activate_rate")}, class: 'btn btn-block btn-xs btn-black text-capitalize')%>
 							</td>
 							<td>
-								<%= link_to "delete", rate_path(rate), method: :delete, data: {confirm: "Are you sure?"}, class: 'text-uppercase text-danger' %>
+								<%= link_to t("delete"), rate_path(rate), method: :delete, data: {confirm: t("ask_sure")}, class: 'text-uppercase text-danger' %>
 							</td>
 
 							<%end%>

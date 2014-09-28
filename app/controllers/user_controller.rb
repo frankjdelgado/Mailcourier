@@ -23,23 +23,20 @@ class UserController < ApplicationController
     def update
         @user = User.find(params[:id])
 
-        # if params[:commit] = "Update"
-	        if @user.update(permit_params)
-	            redirect_to users_admin_index_path, notice: "Updated Operator data succesfully"
-	        else
-	        	flash[:alert] = @user.errors.full_messages.to_sentence
-	            render :edit
-	        end
-        # else
-        	
-        # end
+        if @user.update(permit_params)
+            redirect_to users_admin_index_path, notice: I18n.t('operator_updated_success')
+        else
+        	flash[:alert] = @user.errors.full_messages.to_sentence
+            render :edit
+        end
+
     end
 
     def create
         @user = User.new(user_params)
         @user.role = 1
         if @user.save
-            redirect_to new_users_admin_path, notice: "Operator succesfully created!" 
+            redirect_to new_users_admin_path, notice: I18n.t('operator_added_success')
         else
         	flash[:alert] = @user.errors.full_messages.to_sentence
             render :new
@@ -50,10 +47,10 @@ class UserController < ApplicationController
 		@user = User.operators.find(params[:id])
 
 		if @user.destroy
-			flash[:notice] = "User deleted succesfully"
+			flash[:notice] = I18n.t('operator_deleted_success')
 			redirect_to users_admin_index_path
 		else
-			flash[:error] = "There was a problem with your request. Please, try again."
+			flash[:error] = I18n.t('request_error')
 			redirect_to users_admin_index_path
 		end
 	end

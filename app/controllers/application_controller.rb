@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 	def configure_permitted_parameters
 		devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :agency_id) }
 		devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email, :password) }
+		devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
 	end
 
 	def after_sign_in_path_for(resource)
@@ -52,21 +53,21 @@ class ApplicationController < ActionController::Base
 
  	def require_operator
 		if current_user.is_member?
-			flash[:error] = "You need permissions to access page"
+			flash[:error] = I18n.t('permissions')
 			redirect_to '/'
 		end
 	end
 
 	def require_admin
 		if !current_user.is_admin?
-			flash[:error] = "You need permissions to access page"
+			flash[:error] = I18n.t('permissions')
 			redirect_to '/'
 		end
 	end
 
 	def require_rates
 		if Rate.active.empty?
-			flash[:error] = "You can't add new packages at the momment. Please, try again later."
+			flash[:error] = I18n.t('cant_add_packages')
 			redirect_to package_index_path
 		end
 	end

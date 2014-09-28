@@ -4,33 +4,34 @@
 			<%= form_for(@user, url: users_admin_index_path(@user), html: {class: "form-mail"}) do |f| %>
 			  <% devise_flash %>
 
-				<h1>Add new operator</h1>
+				<h1><%=t('add_new_operator')%></h1>
+				<br>
 				<div class="form-group">
-					<label for="email" class="text-uppercase">Email</label>
-					<%= f.email_field :email, autofocus: true, class: "form-control input-lg", placeholder: "Enter email", required: true %>
+					<label for="email" class="text-uppercase"><%=t('email')%></label>
+					<%= f.email_field :email, autofocus: true, class: "form-control input-lg", placeholder: t("enter_email"), required: true %>
 				</div>
 
 				<div class="form-group">
-					<label for="username" class="text-uppercase">Username</label>
+					<label for="username" class="text-uppercase"><%=t('username')%></label>
 					<%= f.text_field :username, required:true, class: "form-control input-lg", placeholder: t("enter_username")%>
 				</div>
 
 				<div class="form-group">
-					<label for="location" class="text-uppercase">reception center <span title="designated agency for operator" class="glyphicon glyphicon-info-sign"></span></label>
-					<%= f.collection_select(:agency_id, Agency.all, :id, :location, {include_blank: 'Select a location'},{class: "form-control input-lg", required: true}) %>
+					<label for="location" class="text-uppercase"><%= t("reception_center") %> <span title="designated agency for operator" class="glyphicon glyphicon-info-sign"></span></label>
+					<%= f.collection_select(:agency_id, Agency.all, :id, :location, {include_blank: t('select_a_location')},{class: "form-control input-lg", required: true}) %>
 				</div>
 				<div class="form-group">
-			 		<%= f.label :password, class: "text-uppercase" %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+			 		<%= f.label :password,t('password'), class: "text-uppercase" %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
 			    	<%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", required: true %>
 				</div>
 
 			  	<div class="form-group">
-			  		<%= f.label :password_confirmation , class: "text-uppercase"%><br />
+			  		<%= f.label :password_confirmation,t('password_confirmation') , class: "text-uppercase"%><br />
 			    	<%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg", required: true  %>
 				</div>
 
 			  	<div class="form-group">
-			  		<%= f.submit "Add operator", class: "no-radius btn btn-green btn-block btn-lg text-uppercase"%>
+			  		<%= f.submit t("add_operator"), class: "no-radius btn btn-green btn-block btn-lg text-uppercase"%>
 			  	</div>
 			<% end %>
 		</div>

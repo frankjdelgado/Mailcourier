@@ -9,7 +9,7 @@ class RateController < ApplicationController
 		
 		respond_to do |format|
 			msg = { :status => "ok", :message => shipping_cost}
-			format.json  { render :json => msg } # don't do msg.to_json
+			format.json  { render :json => msg }
 		end
 	end
 
@@ -24,7 +24,7 @@ class RateController < ApplicationController
 	def create
 		@rate = Rate.new(rate_params)
         if @rate.save
-            redirect_to rate_index_path, notice: "New rates created succesfully!" 
+            redirect_to rate_index_path, notice: I18n.t('rate_added_success') 
         else
         	flash[:alert] = @rate.errors.full_messages.to_sentence
             render :new
@@ -43,11 +43,11 @@ class RateController < ApplicationController
 			# Deactivate
 			@active.status = 0
 			if !@active.save
-				flash[:alert] = "There was an error with your request. Please, try again."
+				flash[:alert] = I18n.t('request_error') 
 			end
 		else
 			if @rate.save
-				flash[:notice] = "Rate activated succesfully!"
+				flash[:notice] = I18n.t('rate_activated_success') 
 	        else
 	        	flash[:alert] = @rate.errors.full_messages.to_sentence
 	        end
@@ -61,10 +61,10 @@ class RateController < ApplicationController
 		@rate = Rate.find(params[:id])
 
 		if @rate.destroy
-			flash[:notice] = "Rate deleted succesfully"
+			flash[:notice] = I8ln.t('rate_deleted_success')
 			redirect_to rate_index_path
 		else
-			flash[:error] = "There was a problem with your request. Please, try again."
+			flash[:error] = I18n.t('request_error') 
 			redirect_to rate_index_path
 		end
 	end

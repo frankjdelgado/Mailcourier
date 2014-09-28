@@ -86,9 +86,16 @@ body {
 }
 
 // Label
-.bg-green{
+.label-green{
 	background-color: #5cb85c;
 	color:#fff;
+	cursor: default;
+	&:focus,&:hover{
+		color:#fff;
+	}
+	&:active{
+		box-shadow: none;
+	}
 }
 // Helpers
 .no-radius{
