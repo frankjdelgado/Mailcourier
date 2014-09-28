@@ -5,10 +5,10 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  package: 20
-  cost: 10
-  status: 3
+  location: winterfell
 two:
-  package: 30
-  cost: 2
-  status: 1
+  location: kings landing
+three:
+  location: the wall
+four:
+  location: braavos

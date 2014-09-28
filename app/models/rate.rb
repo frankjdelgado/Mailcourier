@@ -2,6 +2,7 @@ class Rate < ActiveRecord::Base
 
 	validates :package, presence: true, numericality: true
 	validates :cost, presence: true, numericality: true
+	validates :status, inclusion: { in: 0..1 }
 
 	paginates_per 15
 

@@ -5,10 +5,14 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
-  package: 20
-  cost: 10
-  status: 3
-two:
-  package: 30
-  cost: 2
-  status: 1
+  description: longclaw
+  weight: 10.1
+  height: 120.1
+  width: 1
+  depth: 0.8
+  value: 1
+  agency_id: 3
+  sender_id: 2
+  receiver_id: 1
+  date_added: 2014-09-27 21:30:22
+  shipping_cost: 64.72

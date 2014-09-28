@@ -9,6 +9,7 @@ class Package < ActiveRecord::Base
 	validates :shipping_cost, presence: true, numericality: true
 	validates :receiver_id, presence: true, numericality: true
 	validates :sender_id, presence: true, numericality: true
+	validates :value, presence: true, numericality: true
 
 	belongs_to :receiver, class_name: "User", foreign_key: "receiver_id"
 	belongs_to :sender, class_name: "User", foreign_key: "sender_id"

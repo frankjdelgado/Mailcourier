@@ -27,3 +27,8 @@ Edit '.env' file within the root directory and change the following:
 ## Starting Server
 
 * foreman start
+
+
+## Tests
+
+* rake test
