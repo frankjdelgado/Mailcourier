@@ -58,3 +58,63 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+        
+es:
+  devise:
+    confirmations:
+      confirmed: "Su cuenta ha sido confirmada."
+      confirmed_and_signed_in: "Su cuenta ha sido confirmada. Ha sido identificado correctamente."
+      send_instructions: "Recibira un correo electrÃ³nico en unos minutos con instrucciones sobre cÃ³mo restablecer su contraseÃ±a."
+      send_paranoid_instructions: "Si su correo electrÃ³nico existe en nuestra base de datos recibirÃ¡s un correo electrÃ³nico en unos minutos con instrucciones sobre cÃ³mo reiniciar su contraseÃ±a."
+    failure:
+      already_authenticated: "Ya ha sido identificado."
+      inactive: "su cuenta aÃºn no ha sido activada."
+      invalid: "Correo o contraseÃ±a invÃ¡lidos."
+      invalid_token: "Cadena de autenticaciÃ³n invalida."
+      locked: "Su cuenta ha sido bloqueada."
+      not_found_in_database: "Correo o contraseÃ±a invÃ¡lidos."
+      timeout: "su sesiÃ³n ha expirado, por favor identifÃ­quese de nuevo para continuar."
+      unauthenticated: "Necesita iniciar sesiÃ³n o registrarse para continuar."
+      unconfirmed: "Debe confirmar su cuenta para continuar."
+      last_attempt: "Tiene un intento mÃ¡s antes de que su cuenta sea bloqueada."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrucciones de confirmaciÃ³n"
+      reset_password_instructions:
+        subject: "Instrucciones para restablecer su contraseÃ±a"
+      unlock_instructions:
+        subject: "Instrucciones de desbloqueo"
+    omniauth_callbacks:
+      failure: "No se le ha podido autorizar de %{kind} debido a \"%{reason}\"."
+      success: "Identificado correctamente de %{kind}."
+    passwords:
+      no_token: "No puede acceder a esta pÃ¡gina sino es por medio de un enlace para restablecer contraseÃ±a. Si ha accedido desde el enlace para restablecer la contraseÃ±a, asegÃºrese de que la URL estÃ© completa."
+      send_instructions: "Recibira un correo electrÃ³nico con instrucciones sobre cÃ³mo restablecer su contraseÃ±a en unos minutos."
+      send_paranoid_instructions: "Si su correo electrÃ³nico existe en nuestra base de datos, recibira un enlace para restablecer la contraseÃ±a en unos minutos."
+      updated: "Su contraseÃ±a ha cambiado correctamente. Ha sido identificado correctamente."
+      updated_not_active: "Su contraseÃ±a se ha cambiado correctamente."
+    registrations:
+      destroyed: "Â¡AdiÃ³s! Su cuenta ha sido cancelada. Esperamos volver a verle pronto."
+      signed_up: "Â¡Bienvenido! Usted ha sido identificado."
+      signed_up_but_inactive: "Se ha registrado correctamente, pero no ha podido iniciar sesiÃ³n porque su cuenta no ha sido activada."
+      signed_up_but_locked: "Se ha registrado correctamente, pero no ha podido iniciar sesiÃ³n porque su cuenta estÃ¡ bloqueada."
+      signed_up_but_unconfirmed: "Se le ha enviado un mensaje con un enlace de confirmaciÃ³n. Por favor visite el enlace para activar su cuenta."
+      update_needs_confirmation: "Ha actualizado su cuenta correctamente, sin embargo necesitamos verificar su nueva cuenta de correo. Por favor revise su correo electrÃ³nico y visite el enlace para finalizar la confirmaciÃ³n de su nueva direcciÃ³n de correo electrÃ³nico."
+      updated: "Ha actualizado tu cuenta correctamente."
+    sessions:
+      signed_in: "Ha iniciado sesiÃ³n satisfactoriamente."
+      signed_out: "Ha cerrado la sesiÃ³n satisfactoriamente."
+    unlocks:
+      send_instructions: "Recibira un correo electrÃ³nico en unos minutos con instrucciones sobre cÃ³mo desbloquear su cuenta."
+      send_paranoid_instructions: "Si su cuenta existe, recibira un correo electrÃ³nico en unos minutos con instrucciones sobre cÃ³mo desbloquear su cuenta."
+      unlocked: "Su cuenta ha sido desbloqueada. Por favor inicie sesiÃ³n para continuar."
+  errors:
+    messages:
+      already_confirmed: "ya ha sido confirmado, por favor intente iniciar sesiÃ³n."
+      confirmation_period_expired: "necesita ser confirmado en %{period}, por favor vuelva a solicitarla."
+      expired: "ha expirado, por favor vuelva a solicitarla."
+      not_found: "no se ha encontrÃ³."
+      not_locked: "no estaba bloqueado."
+      not_saved:
+        one: "1 error impidiÃ³ que este %{resource} fuese guardado:"
+        other: "%{count} errores impidieron que este %{resource} fuese guardado:"
