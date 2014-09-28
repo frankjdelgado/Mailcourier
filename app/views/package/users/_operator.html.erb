@@ -3,7 +3,7 @@
 		<div class="col-xs-12">
 			<ul class="list-unstyled list-inline title-separator">
 				<li class="align-middle"><%= image_tag "open-box.png" , class: "img-responsive img-sm", title: 'Ballicons (free) by Nick Frost is licensed under CC BY 3.0'%></li>
-				<li class="align-middle"><h3 class="no-margin">Packages</h3></li>
+				<li class="align-middle"><h3 class="no-margin"><%= t("packages") %></h3></li>
 			</ul>
 		</div>
 		<div class="col-xs-12 col-md-8">
@@ -11,13 +11,13 @@
 				<table class="table table-hover" id="table-package">
 					<thead>
 						<tr>
-							<th class="text-capitalize">Reference number</th>
-							<th class="text-capitalize">Description</th>
-							<th class="text-capitalize">Status</th>
-							<th class="text-capitalize">To</th>
-							<th class="text-capitalize">From</th>
-							<th class="text-capitalize">Mask As</th>
-							<th class="text-capitalize">Details</th>
+							<th class="text-capitalize"><%= t("reference_number") %></th>
+							<th class="text-capitalize"><%= t("description") %></th>
+							<th class="text-capitalize"><%= t("status") %></th>
+							<th class="text-capitalize"><%= t("to") %></th>
+							<th class="text-capitalize"><%= t("from") %></th>
+							<th class="text-capitalize"><%= t("mask_as") %></th>
+							<th class="text-capitalize"><%= t("details") %></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -30,12 +30,12 @@
 							<td><%= package.sender.username %></td>
 							<td>
 								<% if package.is_pending?%>
-								<%=link_to("Arrived", package_path(package, :status => 1), :method => :put, data: {confirm: "Are you sure you want to mark this package as Arrived?"}, class: 'btn btn-block btn-xs btn-black')%>
+								<%=link_to(t("arrived"), package_path(package, :status => 1), :method => :put, data: {confirm: "Are you sure you want to mark this package as Arrived?"}, class: 'btn btn-block btn-xs btn-black')%>
 								<%elsif package.is_arrived?%>
-								<%=link_to("Delivered", package_path(package, :status => 2), :method => :put, data: {confirm: "Are you sure you want to mark this package as Delivered?"}, class: 'btn btn-block btn-xs btn-green')%>
+								<%=link_to(t("delivered"), package_path(package, :status => 2), :method => :put, data: {confirm: "Are you sure you want to mark this package as Delivered?"}, class: 'btn btn-block btn-xs btn-green')%>
 								<%end%>
 							</td>
-							<td><%=link_to("View Details", package_path(package))%></td>
+							<td><%=link_to(t("view")+" "+t("details"), package_path(package))%></td>
 						</tr>
 						<% end %>
 					</tbody>
@@ -48,26 +48,26 @@
 		<div class="col-md-offset-1 col-md-3 col-xs-12">
 			<%= form_tag(package_index_path, :method => "get", role: "form", id: "search-form") do %>
 				<div class="input-group form-group">
-			        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search Packages", id: "search-form" %>
+			        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: t("search")+" "+t("packages"), id: "search-form" %>
 			        <div class="input-group-btn">
 			            <button class="btn btn-green" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 			        </div>
 			    </div>
-			    <span class="text-grey">Search by...</span>
+			    <span class="text-grey"><%= t("search")+" "+t("by") %>...</span>
 				<div class="radio">
 					<label class="radio-inline">
-						<input checked type="radio" name="search_by" id="search-by1" value="user"> User
+						<input checked type="radio" name="search_by" id="search-by1" value="user"> <%= t("user") %>
 					</label>
 					<label class="radio-inline">
-						<input type="radio" name="search_by" id="search-by2" value="package"> Ref. Number
+						<input type="radio" name="search_by" id="search-by2" value="package"> <%= t("ref_number") %>
 					</label>
 				</div>
 			<% end %>
 	    	<%if !@count.blank?%>
 	    		<%if @count == 0%>
-	    			<p class="text-danger text-center"><%=@count%> Packages found</p>
+	    			<p class="text-danger text-center text-capitalize"><%=@count%> <%= t("packages_found") %></p>
 	    		<%else%>
-	    			<p class="text-success text-center"><%=@count%> Packages found</p>
+	    			<p class="text-success text-center text-capitalize"><%=@count%> <%= t("packages_found") %></p>
 	    		<%end%>
 	    	<%end%>
 		</div>

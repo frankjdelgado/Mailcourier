@@ -3,73 +3,73 @@
 		<div class="col-xs-12">
 			<ul class="list-unstyled list-inline title-separator">
 				<li class="align-middle"><%= image_tag "add.png" , class: "img-responsive img-sm", title: 'small-n-flat by Paomedi is licensed under CC BY 3.0'%></li>
-				<li class="align-middle"><h3 class="no-margin">New Package</h3></li>
+				<li class="align-middle"><h3 class="no-margin text-capitalize"><%= t("new")+" "+t("package") %></h3></li>
 			</ul>
 		</div>
 		<div class="col-xs-12 col-md-8">
 			<%= form_for @package, url: {action: "create"}, html: {class: "form-horizontal"} do |f| %>
 				<div class="form-group">
-					<label for="description" class="col-sm-2 control-label text-capitalize">description</label>
+					<label for="description" class="col-sm-2 control-label text-capitalize"><%= t("description") %></label>
 					<div class="col-xs-12 col-md-8">
-					 <%= f.text_field :description, class: 'form-control', placeholder: 'Package Description', required: true%>
+					 <%= f.text_field :description, class: 'form-control', placeholder: t("package_description"), required: true%>
 					</div>
 
 				</div>
 				<div class="form-group">
-					<label for="weight" class="col-sm-2 control-label text-capitalize">weight</label>
+					<label for="weight" class="col-sm-2 control-label text-capitalize"><%= t("weight") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :weight, class: 'form-control text-capitalize', placeholder: 'weight in kilograms', required: true%>
+					<%= f.text_field :weight, class: 'form-control text-capitalize', placeholder: t('weight')+" "+t("in")+" "+t('kilograms'), required: true%>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="height" class="col-sm-2 control-label text-capitalize">height</label>
+					<label for="height" class="col-sm-2 control-label text-capitalize"><%= t("height") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :height, class: 'form-control text-capitalize', placeholder: 'height in centimeters', required: true%>
+					<%= f.text_field :height, class: 'form-control text-capitalize', placeholder: t('height')+" "+t('in')+" "+t('centimeters'), required: true%>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="width" class="col-sm-2 control-label text-capitalize">width</label>
+					<label for="width" class="col-sm-2 control-label text-capitalize"><%= t("width") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :width, class: 'form-control text-capitalize', placeholder: 'width in centimeters', required: true%>
+					<%= f.text_field :width, class: 'form-control text-capitalize', placeholder: t('width')+" "+t("in")+" "+t('centimeters'), required: true%>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="depth" class="col-sm-2 control-label text-capitalize">depth</label>
+					<label for="depth" class="col-sm-2 control-label text-capitalize"><%= t("depth") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :depth, class: 'form-control text-capitalize', placeholder: 'depth in centimeters', required: true%>
+					<%= f.text_field :depth, class: 'form-control text-capitalize', placeholder: t('depth')+" "+t('in')+" "+t('centimeters'), required: true%>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="value" class="col-sm-2 control-label text-capitalize">value</label>
+					<label for="value" class="col-sm-2 control-label text-capitalize"><%= t("value") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :value, class: 'form-control text-capitalize', placeholder: 'value in Bsf', required: true%>
+					<%= f.text_field :value, class: 'form-control text-capitalize', placeholder: t('value')+" "+ t("in")+" Bsf", required: true%>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="Destination" class="col-sm-2 control-label text-capitalize">Destination</label>
+					<label for="Destination" class="col-sm-2 control-label text-capitalize"><%= t("destination") %></label>
 					<div class="col-xs-12 col-md-8">
 					<%= f.select(:agency_id, options_for_select(Agency.all.collect {|p| [ p.location, p.id ] }),{include_blank: "Select location"},{ required: true, class: "form-control"})%>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="Sender" class="col-sm-2 control-label text-capitalize">Sender</label>
+					<label for="Sender" class="col-sm-2 control-label text-capitalize"><%= t("sender") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= text_field_tag :sender,'', class: 'form-control', placeholder: 'exampleUsername', required: true%>
+					<%= text_field_tag :sender,'', class: 'form-control', placeholder: t('exampleUsername'), required: true%>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="Receiver" class="col-sm-2 control-label text-capitalize">Receiver</label>
+					<label for="Receiver" class="col-sm-2 control-label text-capitalize"><%= t("receiver") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= text_field_tag :receiver, '',{class: 'form-control', placeholder: 'exampleUsername', required: true}%>
+					<%= text_field_tag :receiver, '',{class: 'form-control', placeholder: t('exampleUsername'), required: true}%>
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="Receiver" class="col-sm-2 control-label text-capitalize">shipping cost</label>
+					<label for="Receiver" class="col-sm-2 control-label text-capitalize"><%= t("shipping_cost") %></label>
 					<div class="col-xs-12 col-md-8">
 						<div class="input-group">
-							<%= f.text_field :shipping_cost, {class: 'form-control', placeholder: 'Press the button to calculate', required: true}%>
+							<%= f.text_field :shipping_cost, {class: 'form-control', placeholder: t('press_the_button_to_calculate'), required: true}%>
 					        <div class="input-group-btn">
-					            <button id="math" class="btn btn-green text-capitalize" type="button">calculate</button>
+					            <button id="math" class="btn btn-green text-capitalize" type="button"><%= t("calculate") %></button>
 					        </div>
 					    </div>
 					</div>
@@ -78,7 +78,7 @@
 				<div class="form-group text-right">
 					<div class="col-xs-12">
 						<br>
-						<%= f.submit "add package", class: "no-radius btn btn-green text-capitalize"%>	
+						<%= f.submit t("add")+" "+t("package"), class: "no-radius btn btn-green text-capitalize"%>	
 					</div>
 				</div>
 			<% end %>

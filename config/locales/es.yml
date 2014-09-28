@@ -22,6 +22,7 @@
 es:
   hello: "Hola Mundo"
   calculator: "calculadora"
+  weight: "peso"
   height: "alto"
   width: "ancho"
   depth: "profundidad"
@@ -61,3 +62,43 @@ es:
   search: "buscar"
   by: "por"
   packages_found: "paquetes encontrados"
+  reference_number: "número de referencia"
+  to: "para"
+  from: "de"
+  mask_as: "enmascarar como"
+  arrived: "llegado"
+  delivered: "entregado"
+  user: "usuario"
+  new: "nuevo" 
+  package: "paquete" 
+  package_description: "descripción del paquete"
+  in: "en"
+  destination: "destino"
+  sender: "remitente"
+  exampleUsername: "usuarioEjemplo"
+  shipping_cost: "costo del envío"
+  press_the_button_to_calculate: "presione el botón para calcular"
+  add: "agregar"
+  rates: "tasas"
+  rates_list: "lista de tasas"
+  create_rates: "crear tasas"
+  operator: "operador"
+  operators_list: "lista de operadores"
+  packages_list: "lista de paquetes"
+  edit: "editar"
+  resend_confirmation_instructions: "reenviar instrucciones de confirmación"
+  confirm: confirmar
+  my: mi
+  account: cuenta
+  signed_in: ha ingresado
+  signed_out: ha salido
+  leave_blank_if_you_dont_want_to_change_it: "déjelo en blanco si no desea cambiarlo"
+  we_need_your_current_password_to_confirm_your_changes: necesitamos tu contraseña actual para confirmar tus cambios
+  update: actualizar
+  cancel: cancelar
+  are_you_sure: ¿Estás seguro?
+  resend_unlock_instructions: reenviar instrucciones para el desbloqueo
+  didnt_receive_confirmation_instructions: "No recibió las instrucciones de confirmación?"
+  didnt_receive_unlock_instructions: "No recibió las instrucciones de desbloqueo?"
+  sign_in_with: Ingrese con 
+

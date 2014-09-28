@@ -22,6 +22,7 @@
 en:
   hello: "Hello world"
   calculator: "calculator"
+  weight: "weight"
   height: "height"
   width: "width"
   depth: "depth"
@@ -62,5 +63,44 @@ en:
   search: "search"
   by: "by"
   packages_found: "packages found"
+  reference_number: "reference number"
+  to: "to"
+  from: "from"
+  mask_as: "mask as"
+  arrived: "arrived"
+  delivered: "delivered"
+  user: "user"
+  new: "new"
+  package: "package"
+  package_description: "package description"
+  in: "in"
+  destination: "destination"
+  sender: "sender"
+  exampleUsername: "exampleUsername"
+  shipping_cost: "shipping cost"
+  press_the_button_to_calculate: "press the button to calculate"
+  add: "add"
+  rates: "rates"
+  rates_list: "rates list"
+  create_rates: "create rates"
+  operator: "operator"
+  operators_list: "operators list"
+  packages_list: "packages list"
+  edit: "edit"
+  resend_confirmation_instructions: "resend confirmation instructions"
+  confirm: confirm
+  my: my
+  account: account
+  signed_in: signed in
+  signed_out: signed out
+  leave_blank_if_you_dont_want_to_change_it: "leave blank if you don't want to change it"
+  we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
+  update: update
+  cancel: cancel
+  are_you_sure: Are you sure?
+  resend_unlock_instructions: resend unlock instructions
+  didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
+  didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
+
 
 

@@ -5,7 +5,7 @@
 		<%= form_for(@user, url: users_admin_path(@user), html: { method: :put }, html: {class: "form-mail"}) do |f| %>
 		  <% devise_flash %>
 
-			<h1>Edit Operator</h1>
+			<h1 class="text-capitalize"><%= t("edit")+" "+t("operator") %></h1>
 
 			<div class="form-group">
 				<%= f.label :username, class: "text-uppercase" %>

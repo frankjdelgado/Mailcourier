@@ -5,7 +5,7 @@
 		<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, html: {class: "form-mail"}) do |f| %>
 		  <% devise_flash %>
 
-			<h1>Edit <%= resource_name.to_s.humanize %></h1>
+			<h1><%= t("edit") %> <%= resource_name.to_s.humanize %></h1>
 			<div class="form-group">
 				<%= f.label :email, class: "text-uppercase" %>
 				<%= f.email_field :email, autofocus: true, class: "form-control input-lg" %>
@@ -18,7 +18,7 @@
 			<% end %>
 
 			<div class="form-group">
-				<%= f.label :password, class: "text-uppercase" %> <i>(leave blank if you don't want to change it)</i>
+				<%= f.label :password, class: "text-uppercase" %> <i>(<%= t("leave_blank_if_you_dont_want_to_change_it") %>)</i>
 				<%= f.password_field :password, autocomplete: "off", class: "form-control input-lg"%>
 			</div>
 
@@ -28,19 +28,19 @@
 			</div>
 
 			<div class="form-group">
-				<%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+				<%= f.label :current_password %> <i>(<%= t("we_need_your_current_password_to_confirm_your_changes") %>)</i>
 				<%= f.password_field :current_password, autocomplete: "off", class: "form-control input-lg" %>
 			</div>
 
 			<div class="form-group">
-				<%= f.submit "Update", class: "no-radius btn btn-green btn-block btn-lg text-uppercase" %>
+				<%= f.submit t("update"), class: "no-radius btn btn-green btn-block btn-lg text-uppercase" %>
 			</div>
 			<hr>
 		<% end %>
 
 			<br>
-			<h3 class="text-black">Cancel my account</h3>
-			<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: "no-radius btn btn-black"%></p>
+			<h3 class="text-black text-capitalize"><%= t("cancel")+" "+t("my")+" "+t("account") %></h3>
+			<p><%= button_to t("cancel")+" "+t("my")+" "+t("account"), registration_path(resource_name), data: { confirm: t("are_you_sure") }, method: :delete , class: "no-radius btn btn-black"%></p>
 		</div>
 	</div>
 </div>
