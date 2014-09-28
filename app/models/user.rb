@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
 	validates :username, presence: true, uniqueness: true
 	validates :email, presence: true, uniqueness: true
+	validates :agency_id, presence: true
+	validates :encrypted_password, presence: true
 
 	default_scope {order(username: :asc)}
 	scope :admins, -> { where(role: 2) }

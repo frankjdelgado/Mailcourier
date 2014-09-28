@@ -59,6 +59,8 @@ Rails.application.routes.draw do
     root 'home#index'
 
     get 'rate/calculate' => 'rate#calculate'
+
+    get 'lang' => 'lang#set_lang'
     
     resources :package
 

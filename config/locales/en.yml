@@ -101,6 +101,7 @@ en:
   resend_unlock_instructions: resend unlock instructions
   didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
   didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
+  sign_in_with: sign in with
 
 
 

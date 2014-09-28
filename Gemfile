@@ -43,3 +43,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'autoprefixer-rails'
 gem 'kaminari'
+
+group :development, :test do
+	gem 'foreman'
+end

@@ -22,6 +22,13 @@ class Package < ActiveRecord::Base
 
 	paginates_per 15
 
+	# Send email to users
+	after_update do |package|
+		if package.is_arrived?
+			PackageMailer.arrived(package.sender,package).deliver
+			PackageMailer.arrived(package.receiver,package).deliver
+		end
+	end
 
 	# Search form by ref number
 	def self.search_by_package(terms)

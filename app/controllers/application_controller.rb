@@ -5,12 +5,6 @@ class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
    
-   	before_action :set_locale
- 
-	def set_locale
-	  I18n.locale = params[:locale]
-	end
-
 	protected
 
 	def configure_permitted_parameters
@@ -30,6 +24,30 @@ class ApplicationController < ActionController::Base
 		'/'
 	end
 
+
+	def get_shipping_cost(height,weight,depth,width,value)
+		# Get last system rate added
+		rate = Rate.active.first
+
+		# Get params for formula
+		packageRate = rate.package.to_f
+		costRate 	= rate.cost.to_f
+		height 		= height.to_f
+		weight		= weight.to_f
+		depth		= depth.to_f
+		width		= width.to_f
+		value		= value.to_f
+
+		# calculate final cost
+		shipping_cost = ((height*weight*depth*width)/packageRate) + (costRate*(value/100.0)) 
+
+		# Round final cost
+		shipping_cost = shipping_cost.round(2)
+
+		return shipping_cost
+	end
+
+
 	private
 
  	def require_operator
@@ -43,6 +61,13 @@ class ApplicationController < ActionController::Base
 		if !current_user.is_admin?
 			flash[:error] = "You need permissions to access page"
 			redirect_to '/'
+		end
+	end
+
+	def require_rates
+		if Rate.active.empty?
+			flash[:error] = "You can't add new packages at the momment. Please, try again later."
+			redirect_to package_index_path
 		end
 	end
 
