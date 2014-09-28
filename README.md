@@ -1,10 +1,9 @@
-== README
+# README
 
 
 ## Database
 
 ### Create  User
-====================================================================
 
 create user 'ati'@localhost identified by 'ati';
 
@@ -17,7 +16,6 @@ GRANT ALL PRIVILEGES ON atipro1_production.* TO 'ati'@'localhost';
 
 
 ### Create Database
-====================================================================
 
 rake db:migrate
 
@@ -29,7 +27,6 @@ rake db:seed
 ## Email
 
 ### Configuration
-====================================================================
 
 Edit '.env' file within the root directory and change the following
 	* GMAIL_USERNAME=youremail@domain.com
@@ -38,6 +35,5 @@ Edit '.env' file within the root directory and change the following
 ## Starting Server
 
 ### Commands
-====================================================================
 
 foreman start
