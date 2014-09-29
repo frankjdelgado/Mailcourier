@@ -11,38 +11,38 @@
 				<div class="form-group">
 					<label for="description" class="col-sm-2 control-label text-capitalize"><%= t("description") %></label>
 					<div class="col-xs-12 col-md-8">
-					 <%= f.text_field :description, class: 'form-control', placeholder: t("package_description"), required: true%>
+					 <%= f.text_field :description, class: 'form-control', placeholder: t("package_description"), required: true, autocomplete: 'off'%>
 					</div>
 
 				</div>
 				<div class="form-group">
 					<label for="weight" class="col-sm-2 control-label text-capitalize"><%= t("weight") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :weight, class: 'form-control text-capitalize', placeholder: t('weight')+" "+t("in")+" "+t('kilograms'), required: true%>
+					<%= f.text_field :weight, class: 'form-control text-capitalize', placeholder: t('weight')+" "+t("in")+" "+t('kilograms'), required: true, autocomplete: 'off'%>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="height" class="col-sm-2 control-label text-capitalize"><%= t("height") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :height, class: 'form-control text-capitalize', placeholder: t('height')+" "+t('in')+" "+t('centimeters'), required: true%>
+					<%= f.text_field :height, class: 'form-control text-capitalize', placeholder: t('height')+" "+t('in')+" "+t('centimeters'), required: true, autocomplete: 'off'%>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="width" class="col-sm-2 control-label text-capitalize"><%= t("width") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :width, class: 'form-control text-capitalize', placeholder: t('width')+" "+t("in")+" "+t('centimeters'), required: true%>
+					<%= f.text_field :width, class: 'form-control text-capitalize', placeholder: t('width')+" "+t("in")+" "+t('centimeters'), required: true, autocomplete: 'off'%>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="depth" class="col-sm-2 control-label text-capitalize"><%= t("depth") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :depth, class: 'form-control text-capitalize', placeholder: t('depth')+" "+t('in')+" "+t('centimeters'), required: true%>
+					<%= f.text_field :depth, class: 'form-control text-capitalize', placeholder: t('depth')+" "+t('in')+" "+t('centimeters'), required: true, autocomplete: 'off'%>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="value" class="col-sm-2 control-label text-capitalize"><%= t("value") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= f.text_field :value, class: 'form-control text-capitalize', placeholder: t('value')+" "+ t("in")+" Bsf", required: true%>
+					<%= f.text_field :value, class: 'form-control text-capitalize', placeholder: t('value')+" "+ t("in")+" Bsf", required: true, autocomplete: 'off'%>
 					</div>
 				</div>
 				<div class="form-group">
@@ -54,13 +54,13 @@
 				<div class="form-group">
 					<label for="Sender" class="col-sm-2 control-label text-capitalize"><%= t("sender") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= text_field_tag :sender,'', class: 'form-control', placeholder: t('exampleUsername'), required: true%>
+					<%= text_field_tag :sender,'', class: 'form-control', placeholder: t('exampleUsername'), required: true, autocomplete: 'off'%>
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="Receiver" class="col-sm-2 control-label text-capitalize"><%= t("receiver") %></label>
 					<div class="col-xs-12 col-md-8">
-					<%= text_field_tag :receiver, '',{class: 'form-control', placeholder: t('exampleUsername'), required: true}%>
+					<%= text_field_tag :receiver, '',{class: 'form-control', placeholder: t('exampleUsername'), required: true, autocomplete: 'off'}%>
 					</div>
 				</div>
 				<div class="form-group">
@@ -85,3 +85,7 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	calculate1('<%=rate_calculate_url%>','#math','#package_shipping_cost','#package_height','#package_weight','#package_depth','#package_width','#package_value')
+</script>

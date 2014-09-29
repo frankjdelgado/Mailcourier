@@ -55,7 +55,7 @@
 					</div>
 					<div class="form-group total">
 						<label for="price">Total:</label>
-						<span name="price" id="price"></span>
+						<span name="price"><span id="price"></span> Bsf.</span>
 					</div>
 					<div class="form-group text-right">
 						<button type="button" class="btn btn-red text-capitalize" id="calc"><%= t('calculate') %></button>
@@ -84,4 +84,8 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	calculate1('<%=rate_calculate_url%>','#calc','#price','#height','#weight','#depth','#width','#value')
+</script>
 

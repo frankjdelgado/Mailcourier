@@ -5,6 +5,13 @@ class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
    
+   	before_filter :set_locale
+
+   	def default_url_options(options={})
+	  logger.debug "default_url_options is passed options: #{options.inspect}\n"
+	  { locale: I18n.locale }
+	end
+
 	protected
 
 	def configure_permitted_parameters
@@ -14,15 +21,15 @@ class ApplicationController < ActionController::Base
 	end
 
 	def after_sign_in_path_for(resource)
-		'/package'
+		package_index_path
 	end
 
 	def after_sign_out_path_for(resource)
-		'/'
+		root_path
 	end
 
 	def after_sign_up_path_for(resource)
-		'/'
+		root_path
 	end
 
 
@@ -48,7 +55,6 @@ class ApplicationController < ActionController::Base
 		return shipping_cost
 	end
 
-
 	private
 
  	def require_operator
@@ -70,6 +76,10 @@ class ApplicationController < ActionController::Base
 			flash[:error] = I18n.t('cant_add_packages')
 			redirect_to package_index_path
 		end
+	end
+
+	def set_locale
+	  I18n.locale = params[:locale] || I18n.default_locale
 	end
 
 end
