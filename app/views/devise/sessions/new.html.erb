@@ -25,7 +25,7 @@
 					<%= f.submit t("login"), class: "no-radius btn btn-green btn-block btn-lg text-uppercase"%>
 				</div>
 				<div class="form-group text-right">
-					<a href="/users/password/new" class="text-capitalize"><%= t("forgot")+" "+t("your")+" "+t("password")+"?" %></a>
+					<%= link_to(t("forgot")+" "+t("your")+" "+t("password")+"?", new_user_password_path,class: 'text-capitalize') %> 
 				</div>
 			<% end %>
 		</div>

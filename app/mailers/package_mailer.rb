@@ -2,10 +2,9 @@ class PackageMailer < ActionMailer::Base
 
   default from: ENV["GMAIL_USERNAME"]
 
-  def arrived(user,package)
+  def arrived(user,agency)
     @username = user.username
-    @url = package_url(package)
-    @agency = package.agency.location
+    @agency = agency
     mail(to: user.email, subject: 'Package Arrived')
   end
 
