@@ -32,3 +32,7 @@ Edit '.env' file within the root directory and change the following:
 ## Tests
 
 * rake test
+
+## License
+
+Ruby on Rails is released under the [MIT License](http://www.opensource.org/licenses/MIT).
