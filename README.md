@@ -1,5 +1,11 @@
 # README
 
+## Made by
+* Marvin Bernal
+* Francisco Delgado
+
+## Diagramns
+* Directory: /docs/
 
 ## Database
 

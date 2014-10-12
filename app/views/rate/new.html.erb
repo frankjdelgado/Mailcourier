@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-6 col-md-offset-3">	
-			<%= form_for(@rate, url: rate_index_path(@rate), html: {class: "form-mail"}) do |f| %>
+			<%= form_for(@rate, url: rate_index_path, html: {class: "form-mail"}) do |f| %>
 			  <% devise_flash %>
 
 				<h1 class="text-capitalize"><%=t('create_new_rates')%></h1>

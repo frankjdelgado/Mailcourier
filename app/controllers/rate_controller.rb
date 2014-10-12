@@ -47,13 +47,11 @@ class RateController < ApplicationController
 			end
 		else
 			if @rate.save
-				flash[:notice] = I18n.t('rate_activated_success') 
-	        else
-	        	flash[:alert] = @rate.errors.full_messages.to_sentence
-	        end
-		end
-
-
+				flash[:notice] = I18n.t('rate_activated_success')
+			else
+				flash[:alert] = @rate.errors.full_messages.to_sentence
+			end
+	    end
         redirect_to rate_index_path
 	end
 
@@ -61,7 +59,7 @@ class RateController < ApplicationController
 		@rate = Rate.find(params[:id])
 
 		if @rate.destroy
-			flash[:notice] = I8ln.t('rate_deleted_success')
+			flash[:notice] = I18n.t('rate_deleted_success')
 			redirect_to rate_index_path
 		else
 			flash[:error] = I18n.t('request_error') 
